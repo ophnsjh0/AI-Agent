@@ -1,0 +1,63 @@
+Juan Srisaiwong
+
+Full Stack Developer (풀스택 개발자)
+
+📧 juan.srisaiwong@email.com
+    | 📱 +34 612 345 678
+    🌐 LinkedIn: linkedin.com/srisaiwong | GitHub: github.com/srisaiwong
+    📍 Copenhagen, Denmark (덴마크 코펜하겐)
+
+Professional Summary (전문 요약)
+    - 3년 경력의 열정적인 Full Stack Developer로서, 확장 가능한 웹 애플리케이션과 현대적인 사용자 인터페이스를 개발한 경험을 보유하고 있습니다.
+    - React, Node.js를 중심으로 한 JavaScript 생태계에 능숙하며, 클라우드 기술과 결합된 안정적인 서비스를 구축합니다.
+    - 문제 해결 능력과 협업 중심의 사고방식을 바탕으로, 고품질 소프트웨어 솔루션을 제공합니다.
+
+Technical Skills (기술 스킬)
+    - Frontend: React, Vue.js, HTML5, CSS3, Sass, TypeScript, JavaScript (ES6+), Bootstrap, Tailwind CSS
+    - Backend: Node.js, Express.js, Python, Django, RESTful APIs, GraphQL
+    - Databases: PostgreSQL, MySQL, MongoDB, Redis
+    - Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, CI/CD, Git, GitHub Actions
+    - Tools: VS Code, Postman, Figma, Jira, Slack
+- 
+Professional Experience (경력 사항)
+    Full Stack Developer
+        - TechSolutions Madrid | Madrid, Spain | March 2022 - Present (2022년 3월 ~ 현재)
+        - React와 Node.js를 활용해 10,000명 이상의 사용자가 이용하는 웹 애플리케이션 5개 이상을 개발 및 유지보수
+        - 반응형 디자인을 적용하여 모바일 사용자 참여율을 40% 향상
+        - RESTful API 및 서드파티 서비스 통합으로 데이터 처리 속도 25% 개선
+        - Agile 방법론을 기반으로 한 Cross-functional 팀 협업 수행
+        - 데이터베이스 쿼리 최적화를 통해 페이지 로드 속도 30% 향상
+
+    Junior Full Stack Developer
+        - StartupLab Barcelona | Barcelona, Spain | June 2021 - February 2022 (2021년 6월 ~ 2022년 2월)
+        - Vue.js와 Express.js 기반의 E-commerce 플랫폼 개발 참여
+        - 사용자 인증(Authentication) 및 권한 관리(Authorization) 기능 구현
+        - 코드 리뷰 참여 및 코드 품질 유지
+        - 사용자 피드백을 반영한 버그 수정 및 신규 기능 개발
+        - 배포(Deployment) 및 서버 유지보수 과정 지원
+
+Education (학력)
+    - Bachelor's Degree in Computer Science (컴퓨터공학 학사)
+    - Universidad Politécnica de Madrid | Madrid, Spain | 2017 - 2021
+    - 주요 이수 과목: Data Structures, Algorithms, Database Systems, Software Engineering, Web Development
+
+Projects (프로젝트 경험)
+    - E-Commerce Dashboard
+    - React, Node.js, PostgreSQL, AWS
+    - 제품, 주문, 고객 관리를 위한 종합 관리자 대시보드 구축
+    - 실시간 분석(Real-time Analytics) 및 리포팅 기능 구현
+    - AWS 기반 배포 및 자동화된 CI/CD 파이프라인 구성
+    - Task Management App
+    - Vue.js, Express.js, MongoDB
+    - 실시간 업데이트가 가능한 협업형 업무 관리 애플리케이션 개발
+    - 사용자 인증 및 역할 기반 권한(Role-based Access) 기능 통합
+    - Drag & Drop 기능 및 알림(Notification) 시스템 구현
+
+Languages (언어 능력)
+    - Spanish (스페인어): Native (모국어)
+    - English (영어): Professional (C1)
+    - Catalan (카탈루냐어): Conversational (B2)
+
+Certifications (자격증)
+    - AWS Certified Developer - Associate (2023)
+    - React Developer Certification - Meta (2022)
