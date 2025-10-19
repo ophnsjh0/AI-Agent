@@ -1,7 +1,3 @@
-import os
-from datetime import datetime
-from zoneinfo import ZoneInfo
-from dataclasses import is_dataclass, asdict
 from typing import List
 from crewai.flow.flow import Flow, listen, start, router, and_, or_
 from crewai.agent import Agent
@@ -51,7 +47,7 @@ def _build_markdown(content_type: str, payload, state) -> str:
     lines.append(f"<!-- generated: {ts_human} -->")
     lines.append(f"**Type:** {content_type}")
     if score is not None:
-        lines.append(f"**Score:** {score}/10")
+        lines.append(f"**Score:** {score}/100")
     lines.append("---")
 
     ct = content_type.lower()
@@ -156,7 +152,7 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         if self.state.content_type == "tweet":
             self.state.max_length = 150
         elif self.state.content_type == "blog":
-            self.state.max_length = 1500
+            self.state.max_length = 800
         elif self.state.content_type == "linkedin":
             self.state.max_length = 500
     
@@ -366,15 +362,15 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
 
         if ct == "blog":
             print(f"📝 Blog Post: {self.state.blog_post.title}")
-            print(f"🔍 SEO Score: {self.state.score.score}/10")
+            print(f"🔍 SEO Score: {self.state.score.score}/100")
             payload = self.state.blog_post
         elif ct == "tweet":
             print(f"🐦 Tweet: {self.state.tweet}")
-            print(f"🚀 Virality Score: {self.state.score.score}/10")
+            print(f"🚀 Virality Score: {self.state.score.score}/100")
             payload = self.state.tweet
         elif ct == "linkedin":
             print(f"💼 LinkedIn: {self.state.linkedin_post.title}")
-            print(f"🚀 Virality Score: {self.state.score.score}/10")
+            print(f"🚀 Virality Score: {self.state.score.score}/100")
             payload = self.state.linkedin_post
         else:
             # 혹시 모를 타입 확장 대비
@@ -400,7 +396,7 @@ flow = ContentPipeLineFlow()
 
 flow.kickoff(
     inputs={
-        "content_type": "blog",
-        "topic": "ISA & IRP 통장을 활용한 절세방법 및 투자",
+        "content_type": "tweet",
+        "topic": "AI Dog Trainings",
     },
 )

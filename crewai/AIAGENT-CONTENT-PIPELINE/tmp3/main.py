@@ -11,6 +11,7 @@ from tools import web_search_tool
 from seo_crew import SeoCrew
 from virality_crew import ViralityCrew
 
+
 def _now_kst_str(fmt="%Y%m%d-%H%M%S"):
     return datetime.now(ZoneInfo("Asia/Seoul")).strftime(fmt)
 
@@ -51,7 +52,7 @@ def _build_markdown(content_type: str, payload, state) -> str:
     lines.append(f"<!-- generated: {ts_human} -->")
     lines.append(f"**Type:** {content_type}")
     if score is not None:
-        lines.append(f"**Score:** {score}/10")
+        lines.append(f"**Score:** {score}/100")
     lines.append("---")
 
     ct = content_type.lower()
@@ -106,6 +107,7 @@ def _save_markdown(content_type: str, markdown_text: str, output_dir="output") -
         f.write(markdown_text)
     return path
 
+
 class BlogPost(BaseModel):
     title: str
     subtitle: str
@@ -147,7 +149,7 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
     
     @start()
     def init_content_pipeline(self):
-        if self.state.content_type not in ["tweet", "blog", "linkedin"]:
+        if self.state.content_type not in ["blog", "tweet", "linkedin"]:
             raise ValueError("The content type is wrong.")
         
         if self.state.topic == "":
@@ -156,7 +158,7 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         if self.state.content_type == "tweet":
             self.state.max_length = 150
         elif self.state.content_type == "blog":
-            self.state.max_length = 1500
+            self.state.max_length = 800
         elif self.state.content_type == "linkedin":
             self.state.max_length = 500
     
@@ -165,13 +167,13 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
 
         researcher = Agent(
             role="Head Researcher",
-            backstory="당신은 흥미로운 사실과 통찰력을 파헤치는 것을 좋아하는 디지털 탐정과 같습니다. 다른 사람들이 놓치는 유용한 정보를 찾아내는 재주가 있습니다.",
-            goal=f"{self.state.topic}에 대한 가장 흥미롭고 유용한 정보를 찾아보세요",
+            backstory="You're like a digital detective who loves digging up fascinating facts and insights. You have a knack for finding the good stuff that others miss.",
+            goal=f"Find the most interesting and useful info about {self.state.topic}",
             tools=[web_search_tool],
         )
         
         self.state.research = researcher.kickoff(
-            f"{self.state.topic}에 대한 가장 흥미롭고 유용한 정보를 찾아보세요"
+            f"Find the most interesting and useful info about {self.state.topic}"
         )
         
     
@@ -193,10 +195,10 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         llm = LLM( model="openai/o4-mini", response_format=BlogPost )
         
         if blog_post is None:
+            print("making blog.")
             result = llm.call(
                 f"""
-            다음 리서치 결과를 사용하여 {self.state.topic} 주제에 대한 블로그 게시물을 작성하세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            Make a blog post on the topic {self.state.topic} using the following research:
 
             <research>
             ================
@@ -206,18 +208,18 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
             """
             )
         else:
+            print("Remaking blog.")
             result = llm.call(
                 f"""
-            {self.state.topic}에 이 블로그 게시물을 작성하셨지만, {self.state.score.reason}으로 인해 SEO 점수가 낮습니다.
-
-            게시글을 개선해 주세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            You wrote this blog post on {self.state.topic}, but it does not have a good SEO score because of {self.state.score.reason} 
+            
+            Improve it.
 
             <blog post>
             {self.state.blog_post.model_dump_json()}
             </blog post>
 
-            다음 리서치 결과를 활용하세요.
+            Use the following research.
 
             <research>
             ================
@@ -236,10 +238,10 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         llm = LLM(model="openai/o4-mini", response_format=Tweet)
 
         if tweet is None:
+            print("making tweet.")
             result = llm.call(
                 f"""
-            다음 리서치 결과를 활용하여 {self.state.topic} 주제에 대해 바이럴이 될 수 있는 트윗을 작성해 보세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            Make a tweet that can go viral on the topic {self.state.topic} using the following research:
 
             <research>
             ================
@@ -249,18 +251,18 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
             """
             )
         else:
+            print("remaking tweet.")
             result = llm.call(
                 f"""
-            {self.state.topic}에 이 트윗을 작성하셨지만, {self.state.score.reason} 때문에 바이럴리티 점수가 낮습니다.
+            You wrote this tweet on {self.state.topic}, but it does not have a good virality score because of {self.state.score.reason} 
             
-            트윗을 개선해 주세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            Improve it.
 
             <tweet>
             {self.state.tweet.model_dump_json()}
             </tweet>
 
-            다음 리서치 결과를 활용하세요.
+            Use the following research.
 
             <research>
             ================
@@ -279,10 +281,10 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         llm = LLM(model="openai/o4-mini", response_format=LinkedInPost)
 
         if linkedin_post is None:
+            print("making linkedin_post.")
             result = llm.call(
                 f"""
-            다음 리서치 결과를 활용하여 {self.state.topic} 주제에 대해 바이럴 마케팅이 가능한 링크드인 게시물을 작성하세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            Make a linkedin post that can go viral on the topic {self.state.topic} using the following research:
 
             <research>
             ================
@@ -292,18 +294,18 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
             """
             )
         else:
+            print("remaking linkedin_post.")
             result = llm.call(
                 f"""
-            {self.state.topic}에 이 링크드인 게시물을 작성하셨지만, {self.state.score.reason} 때문에 바이럴리티 점수가 좋지 않습니다.
+            You wrote this linkedin post on {self.state.topic}, but it does not have a good virality score because of {self.state.score.reason} 
             
-            개선해 주세요.
-            {self.state.max_length} 이하로 작성해 주세요.
+            Improve it.
 
             <linkedin_post>
             {self.state.linkedin_post.model_dump_json()}
             </linkedin_post>
 
-            다음 리서치 결과를 활용하세요.
+            Use the following research.
 
             <research>
             ================
@@ -329,18 +331,22 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
         
     @listen(or_(handle_make_tweet, handle_make_linkedin_post))
     def check_viality(self):
-        result = ViralityCrew().crew().kickoff(
-            inputs={
-                "topic" : self.state.topic,
-                "content_type" : self.state.content_type,
-                "content" : (
-                    self.state.tweet.model_dump_json() 
-                    if self.state.content_type == "tweet"
-                    else self.state.linkedin_post.model_dump_json()
-                )   
-            }
+        result = (
+            ViralityCrew()
+            .crew()
+            .kickoff(
+                inputs={
+                    "topic": self.state.topic,
+                    "content_type": self.state.content_type,
+                    "content": (
+                        self.state.tweet.model_dump_json() 
+                        if self.state.content_type == "tweet"
+                        else self.state.linkedin_post.model_dump_json()
+                    ),
+                }
+            )
         )
-        self.state.score = result.pydantic 
+        self.state.score = result.pydantic
         
     @router(or_(check_seo, check_viality))
     def score_router(self):
@@ -366,15 +372,15 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
 
         if ct == "blog":
             print(f"📝 Blog Post: {self.state.blog_post.title}")
-            print(f"🔍 SEO Score: {self.state.score.score}/10")
+            print(f"🔍 SEO Score: {self.state.score.score}/100")
             payload = self.state.blog_post
         elif ct == "tweet":
             print(f"🐦 Tweet: {self.state.tweet}")
-            print(f"🚀 Virality Score: {self.state.score.score}/10")
+            print(f"🚀 Virality Score: {self.state.score.score}/100")
             payload = self.state.tweet
         elif ct == "linkedin":
             print(f"💼 LinkedIn: {self.state.linkedin_post.title}")
-            print(f"🚀 Virality Score: {self.state.score.score}/10")
+            print(f"🚀 Virality Score: {self.state.score.score}/100")
             payload = self.state.linkedin_post
         else:
             # 혹시 모를 타입 확장 대비
@@ -393,6 +399,7 @@ class ContentPipeLineFlow(Flow[ContentPipeLineState]):
             if ct == "linkedin"
             else (self.state.tweet if ct == "tweet" else self.state.blog_post)
         )
+
         
 flow = ContentPipeLineFlow()
 
@@ -400,7 +407,7 @@ flow = ContentPipeLineFlow()
 
 flow.kickoff(
     inputs={
-        "content_type": "blog",
-        "topic": "ISA & IRP 통장을 활용한 절세방법 및 투자",
-    },
+        "content_type": "tweet",
+        "topic": "AI Dog Training",
+    }
 )

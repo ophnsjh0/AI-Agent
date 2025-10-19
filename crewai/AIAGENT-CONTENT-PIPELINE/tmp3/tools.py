@@ -2,15 +2,16 @@ import os, re
 import requests
 from crewai.tools import tool
 
-# query = "네이버 주가"
 
 @tool
 def web_search_tool(query: str):
     """
-    Firecrawl API를 사용하여 웹 검색을 수행하는 도구.
-    입력된 query 문자열을 기반으로 상위 5개의 결과를 가져옵니다.
-    Args:query (str): 검색할 쿼리 문자열
-    Returns:list: 정리된 검색 결과 리스트
+    Web Search Tool.
+    Args:
+        query: str
+            The query to search the web for.
+    Returns
+        A list of search results with the website content in Markdown format.
     """
 
     url = "https://api.firecrawl.dev/v2/search"
@@ -55,14 +56,4 @@ def web_search_tool(query: str):
         cleaned_chunks.append(cleaned_result)
 
     return cleaned_chunks
-
-@tool
-def count_letters(sentence: str):
-    """
-    This function is to count the amount of letters in a sentence.
-    The input is a `sentence` string.
-    The output is a number.
-    """
-    print("tool called with input:", sentence)
-    return len(sentence)
     
