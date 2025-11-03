@@ -6,11 +6,14 @@ from openai import OpenAI
 import asyncio
 import base64
 import streamlit as st
-from agents import Agent, Runner, SQLiteSession, WebSearchTool, FileSearchTool
+from agents import (Agent, Runner, SQLiteSession, WebSearchTool, FileSearchTool, ImageGenerationTool, CodeInterpreterTool, HostedMCPTool,)
+from agents.mcp.server import MCPServerStdio
 
 client = OpenAI()
 
 VECTOR_STORE_ID = "vs_6901a0235f1881918cea7adbd1d6cef1"
+
+DEFAULT_MODEL = "gpt-5-mini"
 
 if "agent" not in st.session_state:
     st.session_state["agent"] = Agent(
@@ -21,7 +24,9 @@ if "agent" not in st.session_state:
         You have access to the followign tools:
             - Web Search Tool: Use this when the user asks a questions that isn't in your training data. Use this tool when the users asks about current or future events, when you think you don't know the answer, try searching for it in the web first. Please search for at least 3 identical pieces of information and answer.
             - File Search Tool: Use this tool when the user asks a question about facts related to themselves. Or when they ask questions about specific files.
+            - Code Interpreter Tool: Use this tool when you need to write and run code to answer the user's question.
         """,
+        # model=DEFAULT_MODEL,
         tools = [
             WebSearchTool(
                 user_location={
@@ -32,6 +37,32 @@ if "agent" not in st.session_state:
             FileSearchTool(
                 vector_store_ids=[VECTOR_STORE_ID],
                 max_num_results=3,
+            ),
+            ImageGenerationTool(
+                tool_config={
+                    "type": "image_generation",
+                    "quality": "high",
+                    "output_format": "jpeg",
+                    "partial_images": 1,
+                    # "model": "gpt-image-1-mini", 
+                }
+            ),
+            CodeInterpreterTool(
+                tool_config={
+                    "type": "code_interpreter",
+                    "container": {
+                        "type": "auto",
+                    },
+                }
+            ),
+            HostedMCPTool(
+                tool_config={
+                    "server_url": "https://mcp.context7.com/mcp",
+                    "type": "mcp",
+                    "server_label": "Context7",
+                    "server_description": "Use this to get the docs from software projects.",
+                    "require_approval": "never",
+                }
             ),
         ]
     )
@@ -60,16 +91,34 @@ async def paint_history():
                         for part in content:
                             if "image_url" in part:
                                 st.image(part["image_url"])
+
                 else:
                     if message["type"] == "message":
                         st.write(message["content"][0]["text"].replace("$", "\$"))
+                        
         if "type" in message:
-            if message["type"] == "web_search_call":
+            message_type = message["type"]
+            if message_type == "web_search_call":
                 with st.chat_message("ai"):
                     st.write("🔍 Searched the web...")
-            elif message["type"] == "file_search_call":
+            elif message_type == "file_search_call":
                 with st.chat_message("ai"):
                     st.write("🗂️ Searched your files...")
+            elif message_type == "image_generation_call":
+                image = base64.b64decode(message["result"])
+                with st.chat_message("ai"):
+                    st.image(image)
+            elif message_type == "code_interpreter_call":
+                with st.chat_message("ai"):
+                    st.code(message["code"])
+            elif message_type == "mcp_list_tools":
+                with st.chat_message("ai"):
+                    st.write(f"Listed {message["server_label"]}'s tools")
+            elif message_type == "mcp_call":
+                with st.chat_message("ai"):
+                    st.write(f"Called {message["server_label"]}'s {message["name"]} with args {message["arguments"]}")
+
+asyncio.run(paint_history())
 
 def update_status(status_container, event):
     status_messages = {
@@ -100,25 +149,73 @@ def update_status(status_container, event):
             "🗂️ File search in progress...",
             "running",
         ),
+        "response.image_generation_call.generating": (
+            "🎨 Drawing image...",
+            "running",
+        ),
+        "response.image_generation_call.in_progress": (
+            "🎨 Drawing image...",
+            "running",
+        ),
+        "response.code_interpreter_call_code.done": ("🤖 Ran code.", "complete"),
+        "response.code_interpreter_call.completed": ("🤖 Ran code.", "complete"),
+        "response.code_interpreter_call.in_progress": (
+            "🤖 Running code...",
+            "complete",
+        ),
+        "response.code_interpreter_call.interpreting": (
+            "🤖 Running code...",
+            "complete",
+        ),
+        "response.mcp_call.completed": (
+            "⚒️ Called MCP tool",
+            "complete",
+        ),
+        "response.mcp_call.failed": (
+            "⚒️ Error calling MCP tool",
+            "complete",
+        ),
+        "response.mcp_call.in_progress": (
+            "⚒️ Calling MCP tool...",
+            "running",
+        ),
+        "response.mcp_list_tools.completed": (
+            "⚒️ Listed MCP tools",
+            "complete",
+        ),
+        "response.mcp_list_tools.failed": (
+            "⚒️ Error listing MCP tools",
+            "complete",
+        ),
+        "response.mcp_list_tools.in_progress": (
+            "⚒️ Listing MCP tools",
+            "running",
+        ),
         "response.completed": (" ", "complete"),
+        
     }
     if event in status_messages:
         label, state = status_messages[event]
         status_container.update(label=label, state=state)
 
 
-asyncio.run(paint_history())
-
-
 async def run_agent(message):
     with st.chat_message("ai"):
         status_container = st.status("⏳", expanded=False)
+        code_placeholder = st.empty()
         text_placeholder = st.empty()
+        image_placeholder = st.empty()
         response = ""
+        code_response = ""
+        
+        st.session_state["code_placeholder"] = code_placeholder
+        st.session_state["image_placeholder"] = image_placeholder
+        st.session_state["text_placeholder"] = text_placeholder
+        
         stream = Runner.run_streamed(
             agent,
             message,
-            session=session,
+            session=session, 
         )
 
         async for event in stream.stream_events():
@@ -129,6 +226,14 @@ async def run_agent(message):
                 if event.data.type == "response.output_text.delta":
                     response += event.data.delta
                     text_placeholder.write(response.replace("$", "\$"))
+                    
+                if event.data.type == "response.code_interpreter_call_code.delta":
+                    code_response += event.data.delta
+                    code_placeholder.code(code_response)
+                    
+                elif event.data.type == "response.image_generation_call.partial_image":
+                    image = base64.b64decode(event.data.partial_image_b64)
+                    image_placeholder.image(image)
 
 
 prompt = st.chat_input(
@@ -143,6 +248,14 @@ prompt = st.chat_input(
     )
 
 if prompt:
+    
+    if "code_placeholder" in st.session_state:
+        st.session_state["code_placeholder"].empty()
+    if "image_placeholder" in st.session_state:
+        st.session_state["image_placeholder"].empty()
+    if "text_placeholder" in st.session_state:
+        st.session_state["text_placeholder"].empty()
+    
     for file in prompt.files:
         if file.type.startswith("text/"):
             with st.chat_message("ai"):
