@@ -2,7 +2,7 @@ import os, re
 import requests
 from crewai.tools import tool
 
-query = "네이버 주가"
+# query = "네이버 주가"
 
 @tool
 def web_search_tool(query: str):

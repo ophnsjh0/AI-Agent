@@ -15,7 +15,7 @@ content_harvesting_task:
       ✅ 허용되는 기사 URL:
       - 본문을 포함한 전체 기사를 포함해야 합니다.
       - 명확한 헤드라인과 발행일을 포함해야 합니다.
-      - `/2023/10/.../story-title`과 같은 슬러그 또는 고유한 기사 ID를 포함하는 경우가 많습니다.
+      - `/2025/11/.../story-title`과 같은 슬러그 또는 고유한 기사 ID를 포함하는 경우가 많습니다.
       ❌ 다음 유형의 URL은 거부합니다.
       - https://www.nytimes.com/topic/
       - https://apnews.com/hub

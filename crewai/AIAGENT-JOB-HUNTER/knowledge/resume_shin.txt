@@ -1,0 +1,321 @@
+ 		이름	신정훈	영문	Shin JungHun	한문	申 政 勳
+		주민번호	811110-1398912	나이	만 42세
+		휴대폰	010-7592-2110	전화번호	
+		E - mail	ophnsjh0@gmail.com	GitHub	github.com/ophnsjh0
+		주소	경기도 용인시 기흥구 청덕동 150-5, B동 402호
+
+학력사항 (최종학력: 대학교(4년) 졸업)
+기간	학교명 및 전공	학점	구분
+2020.03 ~ 2022.02	한국방송통신대학 컴퓨터과학과	4.0/4.5	졸업
+2000.03 ~ 2007.02	건동대학교 전자정보통신과	3.7/4.5	졸업
+1997.03 ~ 2000.02	단양고등학교	-	졸업
+
+활동사항
+기간	활동 내용	활동구분	기관 및 장소
+2019.01 ~ 현재 (6년~)	네트워크 운영, 
+SI/NI사업 지원 및 구축	재직중 	세종아이티엘
+2018.01 ~ 2018. 12 (1년)	네트워크 운영, 
+SI/NI사업 지원 및 구축	퇴직	링네트
+2015.09 ~ 2017.12 (2년3개월)	CDN/Colocation 운영, 
+통신망 관리 및 구축	퇴직	효성ITX
+2012.06 ~ 2015.09 (3년3개월)	네트워크 운영,
+SI/NI사업 지원 및 구축	퇴직	ALTO CNS
+2009.06 ~ 2012.06 (3년)	SI/NI 구축, Infra 유지보수	퇴직	젬스테크놀러지
+
+자격증
+취득일	자격증/면허증	등록번호	발행처
+2019.08.16	정보처리기사	19202240441R	한국산업린력공단
+2020.08.28	리눅스마스터1급	LMF-2001-001964	한국정보통신진흥협회
+200.6.12.18	정보처리산업기사	06204160675U	한국산업린력공단
+2006.06.05	정보통신산업기사	06201160441J	한국방송통신전파진흥원
+
+교육
+교육기간	교육기관	교육명
+2024.08 ~ 	Nomad Coders	풀스택GPT
+2024.03	CISCO	ACI API 교육
+2024.01 ~ 2024.02	Nomad Coders	Django 에어비엔비 클론코딩
+2023.08.	CISCO	ACI Accelerator 교육 
+2022.11 ~ 2022.12 	Nomad Coders	Python Web Scraper 만들기
+2021.08 ~ 2021.10 	Nomad Coders	YouTube 클론코딩
+2021.01 ~ 2021.02 	Nomad Coders	VanillaJS 크롬 앱 만들기
+2020.08 ~ 2020.08 	Nomad Coders	코코아톡 클론코딩
+2015.06 ~ 2015.06 	CISCO	Nexus 9K Vxlan, UCS 교육 
+
+병역
+복무기간	군별/계급/병과	제대구분
+2001.10 ~ 2003.12	육군/병장/ 1114(60M 박격포)	만기제대
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+직무역량 기술서
+Ⅰ. 네트워크 직무역량 
+	SDN(ACI) – APIC, SPINE: N9K-C93600GD-GX, LEAF:N9K-C93180YC-FX, ND(Insight)
+	네트워크 구성 및 변경 관리 
+	Tenant, EPG, BD, VRF, L3out, Contract 설정 및 변경 
+	Fabric, Switch Profile/Policy, interface Profile/Policy,, Domain, VLAN 설정 및 변경 
+	L4-L7 ServiceGragh 기능 설정 및 변경 
+	FW ServiceGragh 기능 설정 및 변경  
+	VMM 연동 및 관리(VMWare)  
+	Vcenter 연동 및 DVS 네트워크 배포 
+	모니터링 
+	텔레메트리 FLOW, LOG, Health Score를 통한 모니터링 및 분석 
+	NDI(Insight)를 통한 모니터링 및 분석, Delta Analysis를 통한 상태 비교
+	TCP dump(Pcap)을 활용한 패킷 분석  
+	장비관리 
+	APIC/NDI 업그레이드. CIMC 업그레이드
+	CASEOPEN 및 장비 교체 진행  
+
+	SDN(NSX) – NSX, SPINE: 7050QX2-32S-F, LEAF: N9K-C93180YC-FX, CVX 
+	Vcenter NSX를 활용한 분산, 표준 네트워크 배포
+	ARISTA SPINE <-> NSX CVX 연동 및 관리  
+
+	L4-L7 Switch – Citrix SDX/VPX/MPX, Piolink PAS, Alteon 3408, F5 BIGIP
+	SDX – VM(Instance) 배포, VM(Instance) Profile 관리 
+	VPX/MPX 
+	서비스 특성 별 SLB 등록 
+	GSLB 서비스 구성 및 운영 관리 
+	SSL/TLS 오프로딩 적용 
+	네트워크 구조 별 구성 – FWLB, NLB, One-Arm 등 
+	One-Arm 구조 Client IP식별 프로토콜 적용 – XXF/ProxyProtocol
+	TCP, HTTP Profile 설정 
+	PIOLINK PAS
+	서비스 특성 별 SLB 등록
+	네트워크 구조 별 구성 – GWLB, Proxy Mode 등
+	Alteon 
+	서비스 특성 별 SLB 등록
+	네트워크 구조 별 구성 – FWLB
+
+	L3 Switch – Cisco Nexus/Catalyst, Juniper EX/QFX/MX, ARISTA,7000 DASAN D6148, Alcatel OS
+	BGP 라우팅 활용 - 외부망 연동 및 트래픽 조정 
+	OSPF 라우팅 활용 – 내부망 연동 및 경로 설계 
+	RIP/STATIC 라우팅 활용 
+	VRRP/HSRP를 활용한 이중화 구성 
+	STP를 활용한 VLAN 별 이중화 구성 
+
+	L2 Switch – Cisco Nexus/Catalyst, Juniper EX, DASAN D5128, Alcatel OS, ubiQuoss, 한드림넷
+	VLAN 활용 네트워크 설계 및 구성 
+	STP를 활용한 이중화 구성 
+
+Ⅱ. 자동화 직무역량
+	PYTHON 
+	Django-Framework
+	Django Model & View & RestFramework을 활용한 백앤드 구성 
+	PYTHON 스크립트와 API을 활용한 장비 데이터 수집 가공 
+	CISCO(ACI), Citrix, Vcenter, EMC Storage 
+	PYTHON 스크립트와 Paramiko 라이브러리을 활용한 장비 데이터 수집 가공 
+	CISCO IOS, Juniper, Linux shell 등 
+	FLASK 라이브러리 HTML를 활용한 간단한 웹 구성 가능 
+	데이터 취합, 문서 자동화등 활용 
+	PYTHON 스크립트와 엑셀, JINJA Template을 활용한 대량 반복 반영 간소화 
+	ACI Contract filter 생성, Interface Description 등록 
+	Ansible을 활용한 배포 및 변경 
+	Linux서버 어플리케이션 배포 및 설치(V3)  
+
+	JS, HTML5, CSS 
+	HTML/CSS를 활용한 간단한 웹 페이지 구성 가능 
+	JS를 활용한 간단한 동적 기능 스크립트 작성 가능 
+
+Ⅲ. 모니터링 및 트러블 슈팅
+	모니터링 
+	Watchall Applemango 
+	SNMP를 통한 장비별 트래픽, CPU, Memory, Power, 온도 현황 관리  
+	중요 장비 및 핵심 구성을 DashBoard화 하여 가시성 확보 
+	이벤트 정의를 통하여 장애 감지 및 신속한 확인 및 조치 
+	장비 로그를 통합 수집 하고 Filter를 활용하여 가독성을 확보, 중요로그는 이벤트화 하여 SMS로 전파 
+	ND(Nexus DashBoard)
+	Flow기반에 데이터 수집 및 분석 
+	일자 별 시간대 별Snapshot 비교를 통한 변경사항 감지
+
+	트러블 슈팅 
+	 모니터링 솔루션 및 장비 로그 분석을 통한 문제점 확인 후 조치
+	구성변경 및 파라미터 변경이 필요한 건에 대해서 작업계획 수립 후 처리 
+	분석이 필요한 건에 대해서 Vendor사 유지보수와 협업하여 처리
+	패킷 덤프를 통한 트래픽 분석  
+	패킷 구조 분석을 통한 장애 분석  
+	TCP Stream을 통한 트랜잭션에 흐름 분석 
+
+	트러블 슈팅 사례 
+	Buffer Drop 감지 확인 후 처리 
+	빅데이터 서버에 내부 복제로 인한 MicroBust 트래픽이 발생 하였음을 감지하고 초기 조치로 빅데이터팀과 협업하여 빅데이터 내부 복제 스케줄링을 업무트래픽이 없는 새벽시간대로 변경 추후 빅데이터 서버 외 다른 서버를 다른 스위치로 분산 수용하여 처리   
+	L4 SLB서비스 분배 관련 분석
+	ROUNDROBIN Method로 구성된 PDF 변환 솔루션 SLB서비스에 서비스 호출이 동일한 서버로만 분배된다는 문의를 접수하고 패킷을 분석한 결과 WAS서버에서 PDF변환 솔루션을 호출하는 패킷이 세션을 유지한 상태(Client TCP Port가 동일)로 PUSH를 활용해 동작하는 것을 확인하고 개발팀에 내용 전달 후 조치
+
+
+
+
+
+
+
+
+
+
+
+경력기술서
+
+세종아이티엘/링네트 공공데이터기술팀 차장 5년 7개월 (2018.01 ~ 2024.08)
+Ⅰ. 서비스 
+	대법원 차세대전자소송 인프라 운영
+	대법원 사법/등기 네트워크 운영
+	대법원 차세대전자소송 SDN(ACI) 인프라 구축
+	한전KPS 네트워크 인프라 노후화 교체
+
+Ⅱ. 담당업무
+	인프라 자동화
+	SDN(ACI) 네트워크 설계 및 구축 운영
+	ISO20000 가용성 담당 
+	ISMS 네트워크 보안 담당 
+	IDC 네트워크 장비 운영 및 모니터링
+	SI사업 네트워크 설계 및 구축,
+
+
+Ⅳ. 주요 성과
+	Linux(RedHat)서버 일일점검 자동화 (2024.08)
+	Linux서버 600여대 점검 소요 시간 단축 
+	SDN 네트워크 분리(2024.08) 
+	단일 VRF로 구성된 DMZ/APP 분리를 통해 보안성 강화
+	OpenSSH 취약점 조치를 위한 CITRIX SDX/VPX L4 OS업그레이드(2024.08) 
+	취약점 조치를 통한 보안성 강화   
+	2024 CISCO 파트너 CX 포럼 “시스코 파트너의 자동화 성공 사례” 발표 (2024.07)
+	API를 활용한 네트워크 장비 파라미터 수집 (2024.07)  
+	“파라미터 대장” 문서 현행화 업무 간소화
+	ACI Contract Filter 설정 관리 자동화(2024.07)
+	GUI대비 작업시간 감소, 엑셀형식 작업계획서로 작업 검토 용이 
+	One-Arm구조 L4스위치 SDN(ACI) 서비스그래프 기능 적용 (2024.06~2024.07)
+	One-Arm구조에서 패킷 가공 없이 Client IP 식별 가능하게 하여 고객요구사항 만족
+	네트워크 장비 점검 자동화 웹 서비스 구현 (2024.05)
+	네트워크 점검 소요시간 단축, 점검 항목 누락 감소
+	SLB 현황 확인 웹 서비스 구현(2024.04)
+	SLB 현황을 웹 서비로 제공하여 팀간 협업 개선, 문서 출력 기능으로 현행화 간소화
+	One-Arm구조 L4 Client IP 식별을 위한 ProxyProtocol 적용(2024.02~2024.03) 
+	TLS로 암호화된 서비스 Client IP 식별 가능하게 구성
+	대법원 차세대전자소송 인프라 SDN 네트워크 구축(2023.08~2024.01) 
+	SDN 네트워크 설계 구축 & Citrix SDX/VPX L4스위치 구성 & GSLB 구성
+	한전KPS 네트워크 정보보안 설비 도입 사업 (2023.07~2023.08) 
+	한전KPS 노후화 네트워크 장비 교체를 통한 안정성 확보 
+	대법원 분당/세종센터 통합백본 스위치 노후화 교체 (2023.04 ~ 2023.05)
+	내구연한 도래한 노후 장비 교체를 통한 안정성 확보
+	대법원 세종등기정보센터 인터넷VDI 인프라 구축 (2022.12 ~ 2023.03)
+	세종센터에 인터넷VDI DR 네트워크를 구성 함으로 안정성 확보
+	대법원 유관기관 연계회선 통합 구성 (2021.12~2022.02)
+	연계회선 통합 구성을 통해 네트워크 장비 10대 이상 절감
+	대법원 네트워크 인프라 진단 진행 (2021.07~2021.10)
+	인프라 진단을 통해 잠재적 위험요소 및 개선사항 도출
+	대법원 등기정보센터 이전 구축 (2021.01~2021.06)
+	신축 데이터센터로 안정적인 인프라 이전 
+	사법부 정보통신망 고도화 사업 전국 망 구성 변경진행(2020.09~2021.06)
+	사법망 회선사업자 이원화 및 회선 이중화를 통해 업무 안정성 확보와 품질 개선 
+	비즈니스 성능 모니터링 솔루션 구축 (2019.04~2019.12)
+	대법원 사법 백본 네트워크 노후화 교체 (2018.09~2019.06), 
+	대법원 망분리4차 인터넷 가상화(VDI) 구축 (2018.08~2018.12)
+
+Ⅲ. 주요 운용장비
+	SDN : 
+	ACI(SPINE: N9K-C93600GD-GX, LEAF:N9K-C93180YC-FX), 
+	NSX(SPINE: 7050QX2-32S-F, LEAF: N9K-C93180YC-FX)
+	L2 Switch 
+	 Cisco Nexus/Catalyst, Juniper EX, DASAN D5128, Alcatel OS, ubiQuoss, 한드림넷 등
+	L3 Switch 
+	 Cisco Nexus/Catalyst, Juniper EX/QFX/MX, ARISTA,7000 DASAN D6148, Alcatel OS 등
+	L4/L7 Switch
+	 Citrix Netscaler SDX/VPX/MPX, PioLink PAS, Alteon 3408
+	Server 
+	 NMS(Watchall), DNS(BIND, InfoBlox), TACACS+(ACS), 서버모니터링(Prometheus) 
+
+
+
+
+
+
+
+효성ITX  CDN사업부/네트워크 기술팀 과장 2년 3개월(2015.09~2017.12)
+Ⅰ. 서비스 
+	CDN 서비스 
+	Colocation 서비스 
+
+Ⅱ. 담당업무
+	IDC 네트워크 장비 운영 및 모니터링
+	Colocation 고객사 네트워크 설계 및 구축,
+	네트워크 망 관리 및 트래픽 조정
+	CDN 서비스 GTM 장비 운영
+	DNS 운영
+	공인IP 관리
+
+Ⅲ. 주요 성과
+	사내 네트워크 보안 인프라 설계 구축(2017.08~2017.12)
+	ISMS 인증 심사 진행 지원, 사내 팀 별 보안성 강화
+	NHN 데이터센터 효성ITX 망 연동(2016.12~2017.02)
+
+Ⅳ. 주요 운용장비
+	L2 Switch : Cisco Catalyst, Juniper EX, Huawei 등
+	L3 Switch : Cisco Nexus/Catalyst, Juniper EX/MX, Huawei, Force10, Extream 등
+	L4/L7 Switch : F5 BIGIP, Citrix Netscaler MPX, PioLink PAS, Alteon 3408
+	Server : DNS(BIND)
+
+ALTOCNS 대법원운영팀 대리 3년 3개월(2012.06~2015.09)
+Ⅰ. 서비스 
+	대법원 사법/등기 네트워크 운영
+
+Ⅱ. 담당업무
+	IDC 네트워크 장비 운영 및 모니터링
+	GSLB 운영
+	DNS 운영
+	현황 관리 : 장비현황, IP, 구성도, 포트 맵 등 
+
+Ⅲ. 주요 성과
+	분당/대전센터 GSLB Location을 활용한 회선 사용률 개선(2015.01~2015.02)
+	분당/대전센터 회선 사용비 9:1에서 7:3으로 개선
+	지방법원 네트워크 장비 노후화 교체 (2014.07~2014.11)
+	내구연한 도래한 노후 장비 교체를 통한 안정성 확보
+	업무용VDI 인프라 구축(2013.02~2013.05)
+	재택 근무가 가능한 VDI 네트워크 환경 제공
+	인터넷VDI 인프라 구축(2013.12~2014.04)
+	VDI를 활용한 망 분리 네트워크 환경 제공
+	사법망 네트워크 장비 증설 (2012.10~2013.02)
+	단일 구성된 장비 이중화를 통한 안정성 확보 
+
+Ⅳ. 주요 운용장비
+	L2 Switch : Cisco Catalyst, Juniper EX, Notel, Dell 등
+	L3 Switch Cisco Nexus/Catalyst, Juniper EX, Huawei, Force10, Extream 등
+	L4/L7 Switch : Citrix Netscaler MPX, PioLink PAS, Alteon 3408
+	Server : NMS(Solawins), DNS(BIND/InfoBlox)
+
+젬스테크놀러지 기술팀 사원 3년 (2009.06~2012.06))
+Ⅰ. 서비스
+	고객사 유지보수, NI 구축:
+
+Ⅱ. 담당업무
+	구축사업 네트워크 엔지니어
+	고객사 유지보수 엔지니어
+
+Ⅲ. 주요 성과
+	서울구치소 백본 인프라 이중화 구성(2010.07~2010.08)
+	단일 구성된 장비 이중화를 통한 안정성 확보
+	LGU+ 독산센터 회선 상암센터 이전(2010.07~2010.08)
+	SKB 학내 망, 부대 망 UTM 장비 설치(2010.03~2010.06)
+	120다산콜센터 네트워크 장비 유지보수(2009.06~2010.03), 
+	한국교육과정평가원 네트워크 장비 유지보수(2009.06~2010.12)
+	학술정보원 네트워크 장비 유지보수(2009.06~2010.12)
+
+Ⅳ. 주요 운용장비
+	L2 Switch : Cisco Catalyst
+	L3 Switch : Cisco Catalyst, Cisco 2500 Router
+	L4/L7 Switch : PioLink PAS, Alteon 3408
+

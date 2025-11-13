@@ -2,7 +2,6 @@ import dotenv
 
 
 dotenv.load_dotenv()
-import re
 from openai import OpenAI
 import asyncio
 import base64
@@ -16,12 +15,6 @@ VECTOR_STORE_ID = "vs_6901a0235f1881918cea7adbd1d6cef1"
 
 DEFAULT_MODEL = "gpt-5-mini"
 
-FINANCE_KEYWORDS = [
-    r"\b(stock|stocks|etf|price|prices|ticker|ohlc|chart|dividend|yield|pe|eps)\b",
-    r"\b(주가|주식|ETF|가격|시가|종가|배당|수익률|티커)\b",
-]
-TICKER_LIKE = r"\b[A-Z]{1,5}\b"  # 간단한 티커 패턴 (AAPL, MSFT 등)
-
 if "session" not in st.session_state:
     st.session_state["session"] = SQLiteSession(
         "chat-history",
@@ -29,13 +22,6 @@ if "session" not in st.session_state:
     )
 session = st.session_state["session"]
 
-def is_finance_query(msg: str) -> bool:
-    if not isinstance(msg, str):
-        return False
-    msg_low = msg.lower()
-    if re.search(TICKER_LIKE, msg):
-        return True
-    return any(re.search(p, msg_low) for p in FINANCE_KEYWORDS)
 
 async def paint_history():
     messages = await session.get_items()
@@ -162,34 +148,30 @@ def update_status(status_container, event):
 asyncio.run(paint_history())
 
 async def run_agent(message):
-    use_mcp_fin = is_finance_query(message)
+    yfinance_server = MCPServerStdio(
+        params={
+            "command": "uvx",
+            "args": ["mcp-yahoo-finance"],
+        },
+        cache_tools_list=True,
+    )
 
-    # yfinance MCP는 "필요할 때만" 띄운다
-    yfinance_server = None
-    if use_mcp_fin:
-        yfinance_server = MCPServerStdio(
-            params={
-                "command": "uvx",
-                "args": ["mcp-yahoo-finance"],
-            },
-            cache_tools_list=True,
-            # 아래 2개 인자가 라이브러리에 있는 경우에만 유효 (없어도 안전)
-            # startup_timeout=20.0,   # 서버 부팅 대기 시간 (기본 5s → 20s)
-            # request_timeout=30.0,   # 요청 응답 대기 시간 (기본 5s → 30s)
-        )
+    async with yfinance_server:
 
-    async def build_agent(mcp_ctx=None):
-        return Agent(
-            mcp_servers=[mcp_ctx] if mcp_ctx else [],
+        agent = Agent(
+            mcp_servers=[
+                yfinance_server,
+            ],
             name="ChatGPT Clone",
             instructions="""
-            You are a helpful assistant.
+        You are a helpful assistant.
 
-            You have access to the followign tools:
-                - Web Search Tool: Use this when the user asks a questions that isn't in your training data. Use this tool when the users asks about current or future events, when you think you don't know the answer, try searching for it in the web first.
-                - File Search Tool: Use this tool when the user asks a question about facts related to themselves. Or when they ask questions about specific files.
-                - Code Interpreter Tool: Use this tool when you need to write and run code to answer the user's question.
-            """,
+        You have access to the followign tools:
+            - Web Search Tool: Use this when the user asks a questions that isn't in your training data. Use this tool when the users asks about current or future events, when you think you don't know the answer, try searching for it in the web first.
+            - File Search Tool: Use this tool when the user asks a question about facts related to themselves. Or when they ask questions about specific files.
+            - Code Interpreter Tool: Use this tool when you need to write and run code to answer the user's question.
+        """,
+            # model=DEFAULT_MODEL,
             tools=[
                 WebSearchTool(),
                 FileSearchTool(
@@ -202,12 +184,15 @@ async def run_agent(message):
                         "quality": "high",
                         "output_format": "jpeg",
                         "partial_images": 1,
+                        # "model": DEFAULT_MODEL,
                     }
                 ),
                 CodeInterpreterTool(
                     tool_config={
                         "type": "code_interpreter",
-                        "container": {"type": "auto"},
+                        "container": {
+                            "type": "auto",
+                        },
                     }
                 ),
                 HostedMCPTool(
@@ -222,93 +207,43 @@ async def run_agent(message):
             ],
         )
 
-    # --- Streamlit UI 영역 그대로 ---
-    with st.chat_message("ai"):
-        status_container = st.status("⏳", expanded=False)
-        code_placeholder = st.empty()
-        image_placeholder = st.empty()
-        text_placeholder = st.empty()
-        response = ""
-        code_response = ""
+        with st.chat_message("ai"):
+            status_container = st.status("⏳", expanded=False)
+            code_placeholder = st.empty()
+            image_placeholder = st.empty()
+            text_placeholder = st.empty()
+            response = ""
+            code_response = ""
 
-        st.session_state["code_placeholder"] = code_placeholder
-        st.session_state["image_placeholder"] = image_placeholder
-        st.session_state["text_placeholder"] = text_placeholder
+            st.session_state["code_placeholder"] = code_placeholder
+            st.session_state["image_placeholder"] = image_placeholder
+            st.session_state["text_placeholder"] = text_placeholder
 
-        # --- [핵심] yfinance MCP를 띄우되, 실패/지연 시 우아하게 폴백 ---
-        agent = None
-        if yfinance_server:
-            try:
-                # Python 3.11+: asyncio.timeout / 3.10 이하면 wait_for 사용
-                try:
-                    # 선호
-                    from asyncio import timeout
-                    async with timeout(25):  # 전체 부팅+tool-list 25초 제한
-                        async with yfinance_server:
-                            agent = await build_agent(yfinance_server)
-                            # 아래 스트리밍 실행 (yfinance 포함)
-                            stream = Runner.run_streamed(agent, message, session=session)
-                            async for event in stream.stream_events():
-                                if event.type == "raw_response_event":
-                                    update_status(status_container, event.data.type)
-                                    if event.data.type == "response.output_text.delta":
-                                        response += event.data.delta
-                                        text_placeholder.write(response.replace("$", "\$"))
-                                    if event.data.type == "response.code_interpreter_call_code.delta":
-                                        code_response += event.data.delta
-                                        code_placeholder.code(code_response)
-                                    elif event.data.type == "response.image_generation_call.partial_image":
-                                        img = base64.b64decode(event.data.partial_image_b64)
-                                        image_placeholder.image(img)
-                            return
-                except ImportError:
-                    # Python 3.10 호환: wait_for
-                    import asyncio as _asyncio
-                    async def _boot_and_stream():
-                        async with yfinance_server:
-                            _agent = await build_agent(yfinance_server)
-                            _stream = Runner.run_streamed(_agent, message, session=session)
-                            async for event in _stream.stream_events():
-                                if event.type == "raw_response_event":
-                                    update_status(status_container, event.data.type)
-                                    if event.data.type == "response.output_text.delta":
-                                        nonlocal response
-                                        response += event.data.delta
-                                        text_placeholder.write(response.replace("$", "\$"))
-                                    if event.data.type == "response.code_interpreter_call_code.delta":
-                                        nonlocal code_response
-                                        code_response += event.data.delta
-                                        code_placeholder.code(code_response)
-                                    elif event.data.type == "response.image_generation_call.partial_image":
-                                        img = base64.b64decode(event.data.partial_image_b64)
-                                        image_placeholder.image(img)
+            stream = Runner.run_streamed(
+                agent,
+                message,
+                session=session,
+            )
 
-                    await _asyncio.wait_for(_boot_and_stream(), timeout=25)
-                    return
+            async for event in stream.stream_events():
+                if event.type == "raw_response_event":
 
-            except Exception as e:
-                # MCP가 뜨지 않거나, 툴 리스트가 안 오거나, 요청이 느려 터지면 폴백
-                status_container.update(
-                    label=f"⚒️ yfinance MCP 비활성(사유: {type(e).__name__}) — 일반 에이전트로 계속합니다.",
-                    state="complete",
-                )
+                    update_status(status_container, event.data.type)
 
-        # 여기로 오면: (1) 애초에 금융 질의가 아니거나 (2) MCP가 실패한 경우
-        agent = await build_agent(None)
-        stream = Runner.run_streamed(agent, message, session=session)
-        async for event in stream.stream_events():
-            if event.type == "raw_response_event":
-                update_status(status_container, event.data.type)
-                if event.data.type == "response.output_text.delta":
-                    response += event.data.delta
-                    text_placeholder.write(response.replace("$", "\$"))
-                if event.data.type == "response.code_interpreter_call_code.delta":
-                    code_response += event.data.delta
-                    code_placeholder.code(code_response)
-                elif event.data.type == "response.image_generation_call.partial_image":
-                    img = base64.b64decode(event.data.partial_image_b64)
-                    image_placeholder.image(img)
+                    if event.data.type == "response.output_text.delta":
+                        response += event.data.delta
+                        text_placeholder.write(response.replace("$", "\$"))
 
+                    if event.data.type == "response.code_interpreter_call_code.delta":
+                        code_response += event.data.delta
+                        code_placeholder.code(code_response)
+
+                    elif (
+                        event.data.type
+                        == "response.image_generation_call.partial_image"
+                    ):
+                        image = base64.b64decode(event.data.partial_image_b64)
+                        image_placeholder.image(image)
 
 
 prompt = st.chat_input(

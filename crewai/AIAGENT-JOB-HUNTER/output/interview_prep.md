@@ -1,122 +1,69 @@
-# 면접 준비: Leading Fintech Company – Senior Full Stack Developer
+# 면접 준비: Samsung SDS – Senior Network Engineer
 
 ## 직무 개요
-Leading Fintech Company(이하 “회사”)는 서울을 거점으로 금융 서비스를 디지털 혁신 중인 선도 핀테크 기업입니다. 현재 Senior Full Stack Developer를 채용하며, 주요 역할은 다음과 같습니다.  
-- React를 이용한 웹 프론트엔드 개발 및 최적화  
-- Node.js 기반 백엔드 서비스 설계·구현·운영  
-- AWS(AWS EC2, S3, Lambda 등)를 활용한 확장성 있고 안정적인 인프라 구축  
-- 제품 기획·디자인·QA를 담당하는 크로스펑셔널 팀과 협업  
-- 애플리케이션 성능·가용성 최적화 및 모니터링
-
-근무지는 서울이며, 완전 원격·하이브리드 모두 지원합니다.
+Samsung SDS의 Senior Network Engineer 역할은 글로벌 데이터센터와 기업망 전반에 걸쳐 고가용성, 고성능 네트워크 인프라를 설계·구축·운영·최적화하는 책임을 집니다. 주요 업무는 대규모 WAN/LAN 아키텍처 설계, BGP/OSPF/MPLS 기반 라우팅 솔루션 배포, Cisco ACI·VMware NSX 등 SDN 환경 운영, F5/Citrix 로드밸런서 관리, 네트워크 자동화 및 스크립팅, 보안 통제 통합, 장애 대응 및 성능 튜닝입니다.
 
 ## 이 직무가 적합한 이유
-1. **필수 기술 스택 완벽 보유**  
-   - React: 5개 이상의 고객용 웹 애플리케이션 개발 경험, 코드 스플리팅·고급 훅(useCallback/useMemo) 적용  
-   - Node.js/Express: RESTful API 설계·GraphQL 도입 검토, 비동기 처리 패턴 최적화  
-   - AWS: EC2/S3/Lambda 기반 마이크로서비스 배포·오토스케일링, 99.9% 이상 가용성 달성  
-2. **성과 중심의 백업 지표**  
-   - 응답 속도 30% 개선, 사용자 페이지 로드 타임 30% 단축  
-   - CI/CD 파이프라인 자동화로 배포 시간 50% 단축  
-   - 10,000+ MAU 환경에서 99.9% 이상 안정적인 서비스 운영  
-3. **크로스펑셔널 협업 경험**  
-   - Product Manager·Design·QA와 애자일 스프린트 주도  
-   - 코드 리뷰·테스트 주도하며 1% 미만의 버그율 유지  
-4. **문제 해결·주도적 실행**  
-   - 서버리스와 컨테이너 간 구조 검토 및 제안  
-   - 신규 기능 릴리스 사이클 단축, 빠른 피드백 반영  
-5. **원격 근무에도 강한 커뮤니케이션**  
-   - 슬랙·지라·컨플루언스 활용 경험 풍부  
-   - 시차·언어 차이 속에서도 투명한 진행 관리 가능
+- 20년 이상의 엔터프라이즈 네트워크 설계·운영 경험 보유
+- BGP, OSPF, MPLS 및 VRF/HSRP/VRRP 등 고가용성 프로토콜 전문성
+- Cisco ACI 및 VMware NSX SDN 구축·운영 성공 사례 다수
+- Cisco IOS/NX-OS, Juniper Junos, F5 BIG-IP, Citrix SDX/VPX·MPX 운영 경험
+- Python, Ansible 기반 네트워크 자동화 및 대규모 스크립팅 역량
+- 글로벌 규모(멀티사이트) 네트워크 용량 계획·성능 튜닝·문제 해결 능력 검증
 
 ## 이 직무에 대한 이력서 주요 내용
-- **TechSolutions Madrid (2022.03 – 현재)**  
-  - React + Node.js 기반 5개 이상 고객용 웹앱 개발·유지보수  
-  - AWS(EC2, S3, Lambda)로 마이크로서비스 배포, 99.9% 가용성  
-  - RESTful API 설계 및 서드파티 연동으로 데이터 처리 속도 25% 개선  
-  - DB 쿼리 최적화로 페이지 로드 30% 단축  
-  - GitHub Actions + Docker로 CI/CD 파이프라인 구축, 배포 시간 50% 단축  
-- **StartupLab Barcelona (2021.06 – 2022.02)**  
-  - Vue.js + Express.js 기반 이커머스 플랫폼 모듈 개발  
-  - JWT 기반 인증·권한 관리, 스트라이프 결제 연동  
-  - 컨테이너화(Docker) 및 AWS EC2 서버 운영 지원  
-- **주요 프로젝트**  
-  - E-Commerce Dashboard: React, Node.js, PostgreSQL, AWS Lambda → 실시간 분석·CI/CD 자동화  
-  - Task Management App: Vue.js, Express.js, MongoDB → Socket.io 기반 실시간 협업 및 RBAC 구현  
-- **인증**: AWS Certified Developer – Associate, React Developer Certification (Meta)
+- **SDN 아키텍처:** Cisco ACI(N9K-C93600GD/GX, N9K-C93180YC-FX) 및 VMware NSX(7050QX2-32S-F) 기반 다중 사이트 구축·운영  
+- **라우팅/스위칭:** BGP, OSPF, MPLS, VLAN, VRF, HSRP/VRRP 설계·배포, Cisco Nexus/Catalyst, Juniper EX/QFX/MX, Arista 장비 운영  
+- **로드밸런싱:** F5 BIG-IP, Citrix SDX/VPX/MPX, Piolink PAS, Alteon L4-7 서비스 구성·튜닝  
+- **자동화:** Python(Django, Flask, Paramiko, REST API), Ansible, Jinja2를 활용해 ACI Contract Filter, 장비 파라미터 대장, 서버 헬스 체크 웹 서비스 자동화  
+- **모니터링·트러블슈팅:** SNMP, Telemetry(Flow, Health Score), NDI/Insight, Prometheus, tcpdump를 이용한 패킷/로그 분석 및 복합 장애 해결  
+- **보안 통합:** DMZ/APP VRF 분리, ServiceGraph L4-7 방화벽 정책, OpenSSH 취약점 패치 등 ISO20000/ISMS 컴플라이언스 숙지
 
 ## 회사 요약
-- 회사명: Viva Republica (Toss)  
-- 산업: 핀테크 (디지털 지갑, 네오뱅크, 증권·인슈어테크)  
-- 설립: 2013년, 본사 서울 강남구, 직원 약 500~700명  
-- 미션: “모두를 위한 쉽고 공정한 금융 경험 제공”  
-- 핵심 가치:  
-  1. 사용자 집착(User Obsession)  
-  2. 대담한 실험(Bold Experimentation)  
-  3. 스피드 & 오너십(Speed & Ownership)  
-  4. 투명한 커뮤니케이션(Transparent Communication)  
-- 최신 동향:  
-  - 2025년 코스닥 상장 준비, 2024년 인도네시아 Toss Bank 론칭  
-  - SoftBank 협업 AI 신용평가 모델 도입  
-  - Toss Pay 잔액·송금 한도 상향, 해외주식 소수점 거래 출시  
-- 기술 스택:  
-  - Frontend: React, TypeScript, Next.js  
-  - Backend: Node.js, Express, GraphQL, PostgreSQL  
-  - Infra: AWS (EKS, Lambda, API Gateway, RDS, S3, SNS/SQS), Terraform, Docker, GitHub Actions  
-- 비즈니스 목표: MAU +20%, 릴리스 사이클 단축, 가용성 99.99%
+- **산업 및 규모:** 전 세계 58개국, 10,000+명 규모의 IT 서비스 리더  
+- **핵심 비즈니스:** 클라우드 서비스(하이브리드·퍼블릭·프라이빗·SaaS), 디지털 물류 플랫폼(Cello Square), AI·Analytics·Cybersecurity 솔루션  
+- **미션:** “인재와 기술을 바탕으로 탁월한 제품·서비스로 더 나은 글로벌 사회에 기여”  
+- **비전·가치:** 데이터 기반 디지털 트랜스포메이션 선도, People·Excellence·Change·Integrity  
+- **최근 주요 이슈:** Generative AI 하이퍼오토메이션 전략 발표(2024.05), Red Hat·IBM 클라우드 파트너십(2024.03), 브랜드 가치 글로벌 12위(2024.02)  
 
 ## 예상 면접 질문
-1. React & TypeScript  
-   - useCallback, useMemo 최적화 경험  
-   - Redux vs Context API vs React Query 도입 기준  
-   - Next.js SSR/SSG를 도입한 사례와 성과  
-2. Node.js & API 설계  
-   - RESTful vs GraphQL 설계 Trade-off  
-   - 비동기 처리 패턴(async/await vs Promise)  
-   - 에러 핸들링·로깅 전략  
-3. AWS & 클라우드 아키텍처  
-   - 서버리스(Lambda/API Gateway) vs 컨테이너(EKS) 선택 기준  
-   - Terraform을 이용한 인프라 코드화 경험  
-   - Blue/Green 배포, Canary Release 설계  
-4. 시스템 확장성 & 성능  
-   - Auto Scaling 전략 및 로드 밸런싱 적용 경험  
-   - Redis, CloudFront 등을 활용한 캐시 설계  
-   - 데이터베이스 샤딩·리플리카 전략  
-5. 소프트웨어 품질 & 팀 협업  
-   - 단위/통합/E2E 테스트 커버리지 확보 방법  
-   - Agile/Scrum 실무 경험 및 툴(지라, 컨플루언스) 활용 사례  
-6. 행동 면접  
-   - 갈등 상황 해결 경험  
-   - 원격 근무 팀원과의 소통 전략  
-   - 실패에서 얻은 교훈과 개선 사례
+1. 대규모 글로벌 WAN/LAN 아키텍처 설계 시 BGP/OSPF/MPLS를 어떻게 조합해 사용했는지 구체 사례를 설명해 주세요.  
+2. Cisco ACI를 도입하고 운영하면서 마주친 복합 장애와 해결 과정—랩아웃, Contract Filter 자동화—을 설명해 주세요.  
+3. VMware NSX 환경에서 L2→L3 전환 또는 VMM 통합 시 고려사항과 구현 절차를 설명해 주세요.  
+4. F5 BIG-IP 혹은 Citrix SDX 환경에서 One-Arm 구조를 구성할 때 Client IP 식별 문제를 어떻게 해결했나요?  
+5. Python/Ansible을 사용해 네트워크 장비 구성을 자동화한 구체적인 프로젝트와 성과(시간 절감·오류 감소)를 설명해 주세요.  
+6. 99.99% 가용성 목표를 달성하기 위해 수행한 용량 계획과 성능 튜닝 활동 예시를 들려주세요.  
+7. SDN과 전통적인 레거시 네트워크 아키텍처를 통합 관리할 때 기술적/조직적 도전 과제는 무엇이었고 어떻게 극복했나요?  
+8. 네트워크 보안 통제(방화벽, IDS/IPS, DDoS 방어)와 연계해 장애 발생 시 어떤 프로세스로 대응하셨나요?  
+9. 글로벌 데이터센터 간 DR(재해 복구) 네트워크 설계를 어떻게 계획하고 테스트했는지 설명해 주세요.  
+10. 장애 트러블슈팅—패킷 덤프, TCP 스트림 분석—프로세스를 단계별로 기술해 주세요.
 
 ## 면접관에게 질문할 수 있는 질문
-1. “Wallet 팀 내 프론트엔드·백엔드·인프라 엔지니어 간 협업 워크플로우는 어떻게 되나요?”  
-2. “향후 6–12개월 내 Toss Pay에 추가될 주요 기능 로드맵을 공유해 주실 수 있을까요?”  
-3. “시스템 확장성이나 레거시 코드 개선 측면에서 가장 시급한 기술적 과제는 무엇인가요?”  
-4. “코드 리뷰 시 중점적으로 보는 기준과 E2E 테스트 커버리지 목표 수준은 어떻게 되나요?”  
-5. “초기 엔지니어들이 2–3년 내 성장 경로는 어떻게 그려지나요?”  
-6. “스프린트 회고나 사내 기술 세미나 등 지식 공유 문화는 어떻게 운영되나요?”
+1. 현재 글로벌 인프라 운영팀 조직 구조와 주요 협업 부서는 어떻게 구성되어 있습니까?  
+2. Cisco ACI 및 VMware NSX 도입 현황과 향후 마이그레이션 전략은 무엇인가요?  
+3. 네트워크 자동화 및 오케스트레이션 툴(Ansible, Python 스크립트) 활용 현황과 앞으로의 개발 로드맵을 알고 싶습니다.  
+4. 최근 하이퍼오토메이션(Generative AI) 프로젝트 중 네트워크 관점에서 요구되었던 사항은 무엇이었나요?  
+5. 글로벌 네트워크 토폴로지(BGP/MPLS) 설계 시 직면한 가장 큰 기술·운영적 과제는 무엇이었습니까?  
+6. 서비스 가용성·재해 복구를 위해 현재 사용 중인 모니터링·알림 시스템(텔레메트리, SNMP, APM 등)에 대해 설명 부탁드립니다.  
+7. 보안팀과의 협업 방식 및 네트워크 보안 정책 수립 프로세스는 어떻게 운영되나요?  
+8. 입사 후 3~6개월 내 이 역할로서 달성해야 할 주요 목표는 무엇인지 알고 싶습니다.
 
 ## 알아야 할/검토해야 할 개념
-- React Hooks 심층 이해(useCallback, useMemo, custom hooks)  
-- 상태 관리 패턴: Redux vs Context API vs SWR/React Query  
-- SSR/SSG(Next.js) 원리 및 구현 사례  
-- RESTful API vs GraphQL 설계, 비동기 패턴  
-- AWS 서버리스(Lambda, API Gateway, Cognito) vs 컨테이너(EKS) 아키텍처  
-- Terraform/CloudFormation 인프라 코드화  
-- CI/CD 파이프라인 설계(Blue/Green, Canary)  
-- 시스템 모니터링·로깅(CloudWatch, ElasticSearch)  
-- 캐싱 전략(Redis, CloudFront) 및 DB 샤딩/리플리카  
-- 테스트 전략(Unit/Integration/E2E) 및 코드 리뷰 기준  
-- 애자일·스크럼 프로세스 이해
+- BGP, OSPF, MPLS 심화 (Path selection, Route reflectors, Traffic engineering)  
+- VRF/HSRP/VRRP 기반 이중화 설계  
+- Cisco ACI: Tenant/EPG/BD/VRF/L3Out 구성과 ServiceGraph 기능  
+- VMware NSX: VCenter 연동, 분산 스위치, Overlay/Underlay 설정  
+- F5 BIG-IP/Citrix SDX L4-7 서비스 그래프, One-Arm vs Full Proxy 차이  
+- Python, Ansible 네트워크 자동화 패턴 및 REST API 통신  
+- 네트워크 보안 통합: 방화벽, IDS/IPS, DDoS 방어, ISO20000/ISMS  
+- 모니터링 및 텔레메트리: SNMP, Flow 기반 분석, Health Score, Prometheus  
+- DR/HA 아키텍처: 멀티사이트 페일오버, 리던던시 테스트 시나리오  
 
 ## 전략적 조언
-- **어조**: 자신감 있으나 겸손하게. 기술 스택별 구체 수치(%, ms, uptime)를 활용해 성과를 증명하세요.  
-- **포커스**: 회사의 ‘사용자 집착’과 ‘스피드 & 오너십’에 부합하는 사례, 빠른 학습과 주도적 실행 경험을 강조합니다.  
-- **스토리텔링**: 문제 정의 → 본인 역할 → 해결책 → 결과(수치)를 구조화해 전달하세요.  
-- **위험 신호 회피**:  
-  - 지나치게 기술 용어만 나열하거나, 수치 근거 없이 “잘합니다”만 언급하지 마세요.  
-  - 경험(특히 5년 요건)에 대한 설명이 부족하면 지원 동기·학습 속도를 보완 사례로 제시하세요.  
-- **원격 근무**: 리모트 경험 및 비동기 협업 툴 활용 역량을 강조해 “어떻게 시차·커뮤니케이션 이슈를 해결했는지” 구체 사례를 준비하세요.  
-- **마무리**: “회사가 직면한 가장 큰 기술적 도전이 무엇인지?” 질문으로 인터뷰어 관심을 이끌고, 지원자의 문제 해결 의지를 어필하세요.
+- 답변 구조는 STAR(상황-과제-행동-성과) 모델로 명확히 제시하십시오.  
+- 숫자(가용성 %, 시간 절감 %, 비용 절감 등)로 성과를 정량화하여 신뢰성을 강화하세요.  
+- Google화된 예시보다는 Samsung SDS 글로벌 맥락과 연계된 사례를 들어 현업 이해도를 보여주세요.  
+- 자신감 있는 톤으로 핵심 기술 키워드(TCP/IP, SDN, Automation, HA)를 반복 언급해 전문성을 강조합니다.  
+- 질문 시 조직·팀 문화, 협업 프로세스, 기대 성과를 파악하여 입사 후 성공 로드맵을 그릴 준비를 보여주세요.  
+- 면접 중 불확실한 질문은 솔직히 인정하되, 유사 경험과 학습 계획을 제시하여 성장 잠재력을 어필하십시오.  
+- 리더십 역량(팀 멘토링, 기술 전파, 프로젝트 리딩)과 커뮤니케이션 스킬을 사례로 녹여내세요.

@@ -59,7 +59,7 @@ class NewsReaderAgent:
         )
 
 
-result = NewsReaderAgent().crew().kickoff(inputs={"topic": "한국 윤석열 전 대통령 현 상황"})
+result = NewsReaderAgent().crew().kickoff(inputs={"topic": "한국 주식(KOSPI, KOSDAQ) 투자 추천 리포트"})
 
 for task_output in result.tasks_output:
     print(task_output)

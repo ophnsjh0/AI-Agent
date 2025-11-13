@@ -9,22 +9,26 @@ from models import JobList, RankedJobList, ChosenJob
 from tools import web_search_tool
 
 resume_knowledge_for_match = TextFileKnowledgeSource(
-    file_paths=["resume.txt"],
+    file_paths=["resume_shin.txt"],
+    # file_paths=["resume.txt"],
     collection_name="resume_for_match"
 )
 
 resume_knowledge_for_optimization = TextFileKnowledgeSource(
-    file_paths=["resume.txt"],
+    file_paths=["resume_shin.txt"],
+    # file_paths=["resume.txt"],
     collection_name="resume_for_optimization"
 )
 
 resume_knowledge_for_research = TextFileKnowledgeSource(
-    file_paths=["resume.txt"],
+    file_paths=["resume_shin.txt"],
+    # file_paths=["resume.txt"],
     collection_name="resume_for_research"
 )
 
 resume_knowledge_for_interview = TextFileKnowledgeSource(
-    file_paths=["resume.txt"],
+    file_paths=["resume_shin.txt"],
+    # file_paths=["resume.txt"],
     collection_name="resume_for_interview"
 )
 
@@ -128,7 +132,7 @@ class JobHunterCrew:
 JobHunterCrew().crew().kickoff(
     inputs={
         'level' : '전문가',
-        'position': '네트워크, 풀스택 개발자',
+        'position': '네트워크',
         'location': '한국'
     }
 )
