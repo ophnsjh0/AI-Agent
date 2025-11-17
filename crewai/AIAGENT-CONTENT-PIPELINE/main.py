@@ -401,6 +401,6 @@ flow = ContentPipeLineFlow()
 flow.kickoff(
     inputs={
         "content_type": "blog",
-        "topic": "ISA & IRP 통장을 활용한 절세방법 및 투자",
+        "topic": "2025년 현재 가장 뜨거운 주식 투자종목",
     },
 )

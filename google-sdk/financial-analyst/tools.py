@@ -1,10 +1,11 @@
-import os, re
+import dotenv
 
-from crewai.tools import tool
+dotenv.load_dotenv()
+import re
+import os
 from firecrawl import FirecrawlApp, ScrapeOptions
 
 
-@tool
 def web_search_tool(query: str):
     """
     Web Search Tool.
@@ -47,3 +48,6 @@ def web_search_tool(query: str):
         cleaned_chunks.append(cleaned_result)
 
     return cleaned_chunks
+
+
+print(web_search_tool("potatos"))

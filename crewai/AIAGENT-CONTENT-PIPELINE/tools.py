@@ -1,47 +1,39 @@
 import os, re
-import requests
-from crewai.tools import tool
 
-# query = "네이버 주가"
+from crewai.tools import tool
+from firecrawl import FirecrawlApp, ScrapeOptions
+
 
 @tool
 def web_search_tool(query: str):
     """
-    Firecrawl API를 사용하여 웹 검색을 수행하는 도구.
-    입력된 query 문자열을 기반으로 상위 5개의 결과를 가져옵니다.
-    Args:query (str): 검색할 쿼리 문자열
-    Returns:list: 정리된 검색 결과 리스트
+    Web Search Tool.
+    Args:
+        query: str
+            The query to search the web for.
+    Returns
+        A list of search results with the website content in Markdown format.
     """
+    app = FirecrawlApp(api_key=os.getenv("FIRECRAWL_API_KEY"))
 
-    url = "https://api.firecrawl.dev/v2/search"
+    response = app.search(
+        query=query,
+        limit=5,
+        scrape_options=ScrapeOptions(
+            formats=["markdown"],
+        ),
+    )
 
-    payload = {
-        "query":query,
-        "limit": 5,
-        "scrapeOptions": {
-            "formats": ["markdown"]
-        },
-    }
-
-    headers = {
-        "Authorization": f"Bearer {os.getenv('FIRECRAWL_API_KEY')}",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    response = response.json()
-    
-
-    if not response["success"] :
+    if not response.success:
         return "Error using tool."
 
     cleaned_chunks = []
 
-    for result in response.get("data", {}).get("web", []):
+    for result in response.data:
 
-        title = result.get("title", "")
-        url = result.get("url", "")
-        markdown = result.get("markdown", "")
+        title = result["title"]
+        url = result["url"]
+        markdown = result["markdown"]
 
         cleaned = re.sub(r"\\+|\n+", "", markdown).strip()
         cleaned = re.sub(r"\[[^\]]+\]\([^\)]+\)|https?://[^\s]+", "", cleaned)

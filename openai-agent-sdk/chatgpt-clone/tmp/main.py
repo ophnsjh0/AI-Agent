@@ -164,13 +164,13 @@ async def run_agent(message):
             ],
             name="ChatGPT Clone",
             instructions="""
-        You are a helpful assistant.
+                You are a helpful assistant.
 
-        You have access to the followign tools:
-            - Web Search Tool: Use this when the user asks a questions that isn't in your training data. Use this tool when the users asks about current or future events, when you think you don't know the answer, try searching for it in the web first.
-            - File Search Tool: Use this tool when the user asks a question about facts related to themselves. Or when they ask questions about specific files.
-            - Code Interpreter Tool: Use this tool when you need to write and run code to answer the user's question.
-        """,
+                You have access to the followign tools:
+                    - Web Search Tool: Use this when the user asks a questions that isn't in your training data. Use this tool when the users asks about current or future events, when you think you don't know the answer, try searching for it in the web first.
+                    - File Search Tool: Use this tool when the user asks a question about facts related to themselves. Or when they ask questions about specific files.
+                    - Code Interpreter Tool: Use this tool when you need to write and run code to answer the user's question.
+                """,
             # model=DEFAULT_MODEL,
             tools=[
                 WebSearchTool(),

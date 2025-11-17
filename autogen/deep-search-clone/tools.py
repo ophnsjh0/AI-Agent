@@ -1,11 +1,7 @@
 import os, re
-import requests
+import datetime
+from firecrawl import FirecrawlApp, ScrapeOptions
 
-def save_report_to_md(content: str) -> str:
-    """Save report content to report.md file."""
-    with open("report.md", "w") as f:
-        f.write(content)
-    return "report.md"
 
 def web_search_tool(query: str):
     """
@@ -16,36 +12,26 @@ def web_search_tool(query: str):
     Returns
         A list of search results with the website content in Markdown format.
     """
+    app = FirecrawlApp(api_key=os.getenv("FIRECRAWL_API_KEY"))
 
-    url = "https://api.firecrawl.dev/v2/search"
+    response = app.search(
+        query=query,
+        limit=2,
+        scrape_options=ScrapeOptions(
+            formats=["markdown"],
+        ),
+    )
 
-    payload = {
-        "query":query,
-        "limit": 5,
-        "scrapeOptions": {
-            "formats": ["markdown"]
-        },
-    }
-
-    headers = {
-        "Authorization": f"Bearer {os.getenv('FIRECRAWL_API_KEY')}",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.post(url, json=payload, headers=headers)
-    response = response.json()
-    
-
-    if not response["success"] :
+    if not response.success:
         return "Error using tool."
 
     cleaned_chunks = []
 
-    for result in response.get("data", {}).get("web", []):
+    for result in response.data:
 
-        title = result.get("title", "")
-        url = result.get("url", "")
-        markdown = result.get("markdown", "")
+        title = result["title"]
+        url = result["url"]
+        markdown = result["markdown"]
 
         cleaned = re.sub(r"\\+|\n+", "", markdown).strip()
         cleaned = re.sub(r"\[[^\]]+\]\([^\)]+\)|https?://[^\s]+", "", cleaned)
@@ -59,3 +45,10 @@ def web_search_tool(query: str):
         cleaned_chunks.append(cleaned_result)
 
     return cleaned_chunks
+
+
+def save_report_to_md(content: str) -> str:
+    """Save report content to report.md file."""
+    with open("report.md", "w") as f:
+        f.write(content)
+    return "report.md"

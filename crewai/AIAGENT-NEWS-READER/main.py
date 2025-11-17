@@ -59,7 +59,7 @@ class NewsReaderAgent:
         )
 
 
-result = NewsReaderAgent().crew().kickoff(inputs={"topic": "한국 주식(KOSPI, KOSDAQ) 투자 추천 리포트"})
+result = NewsReaderAgent().crew().kickoff(inputs={"topic": "미국, 한국 주식 중 앞으로 유망한 산업 및 종목 추천"})
 
 for task_output in result.tasks_output:
     print(task_output)
