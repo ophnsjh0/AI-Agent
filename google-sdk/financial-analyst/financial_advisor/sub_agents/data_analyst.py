@@ -5,6 +5,7 @@ from google.adk.models.lite_llm import LiteLlm
 
 
 # MODEL = LiteLlm(model="openai/gpt-4o")
+MODEL = LiteLlm(model="openai/gpt-5.1")
 
 
 def get_company_info(ticker: str) -> str:
@@ -145,8 +146,8 @@ def get_financial_metrics(ticker: str) -> str:
 
 data_analyst = LlmAgent(
     name="DataAnalyst",
-    # model=MODEL,
-    model='gemini-2.5-flash',
+    model=MODEL,
+    # model='gemini-2.5-flash',
     description="Gathers and analyzes basic stock market data using multiple focused tools",
     instruction="""
     You are a Data Analyst who gathers stock information using 4 specialized tools:
@@ -163,4 +164,5 @@ data_analyst = LlmAgent(
         get_stock_price,
         get_financial_metrics,
     ],
+    output_key="data_analyst_result",
 )

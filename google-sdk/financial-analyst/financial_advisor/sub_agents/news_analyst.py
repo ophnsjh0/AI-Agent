@@ -1,16 +1,16 @@
 
 from google.adk.agents import Agent
-# from google.adk.models.lite_llm import LiteLlm
+from google.adk.models.lite_llm import LiteLlm
 from tools import web_search_tool
 
 
 # MODEL = LiteLlm(model="openai/gpt-4o")
-
+MODEL = LiteLlm(model="openai/gpt-5.1")
 
 news_analyst = Agent(
     name="NewsAnalyst",
-    # model=MODEL,
-    model='gemini-2.5-flash',
+    model=MODEL,
+    # model='gemini-2.5-flash',
     description="Uses Web Search tools to search and scrape real web content from the web.",
     instruction="""
     You are a News Analyst Specialist who uses web tools to find current information. Your job:
@@ -26,4 +26,5 @@ news_analyst = Agent(
     tools=[
         web_search_tool,
     ],
+    output_key="news_analyst_result",
 )

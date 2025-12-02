@@ -1,8 +1,9 @@
 import yfinance as yf
 from google.adk.agents import Agent
-# from google.adk.models.lite_llm import LiteLlm
+from google.adk.models.lite_llm import LiteLlm
 
 # MODEL = LiteLlm(model="openai/gpt-4o")
+MODEL = LiteLlm(model="openai/gpt-5.1")
 
 
 def get_income_statement(ticker: str):
@@ -147,8 +148,8 @@ def get_cash_flow(ticker: str):
 
 financial_analyst = Agent(
     name="FinancialAnalyst",
-    # model=MODEL,
-    model='gemini-2.5-flash',
+    model=MODEL,
+    # model='gemini-2.5-flash',
     description="Analyzes detailed financial statements including income, balance sheet, and cash flow",
     instruction="""
     You are a Financial Analyst who performs deep financial statement analysis. Your job:
@@ -170,4 +171,5 @@ financial_analyst = Agent(
         get_balance_sheet,
         get_cash_flow,
     ],
+    output_key="financial_analyst_result",
 )
