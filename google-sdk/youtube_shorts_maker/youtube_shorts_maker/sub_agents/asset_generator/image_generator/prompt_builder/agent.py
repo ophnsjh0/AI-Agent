@@ -25,7 +25,8 @@ prompt_builder_agent = Agent(
     description=PROMPT_BUILDER_DESCRIPTION,
     instruction=PROMPT_BUILDER_PROMPT,
     # model=MODEL,
-    model='gemini-2.5-flash',
+    # model="gemini-3-pro-preview",
+    model="gemini-2.5-flash", 
     output_schema=PromptBuilderOutput,
     output_key="prompt_builder_output",
 )

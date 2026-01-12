@@ -31,10 +31,9 @@ async def generate_images(tool_context: ToolContext):
             continue
 
         image = client.images.generate(
-            model="gpt-image-1",
+            model="gpt-image-1.5",
             prompt=enhanced_prompt,
             n=1,
-            quality="low",
             moderation="low",
             output_format="jpeg",
             background="opaque",
@@ -63,8 +62,8 @@ async def generate_images(tool_context: ToolContext):
             }
         )
 
-        return {
-            "total_images": len(generated_images),
-            "generated_images": generated_images,
-            "status": "complete",
-        }
+    return {
+        "total_images": len(generated_images),
+        "generated_images": generated_images,
+        "status": "complete",
+    }

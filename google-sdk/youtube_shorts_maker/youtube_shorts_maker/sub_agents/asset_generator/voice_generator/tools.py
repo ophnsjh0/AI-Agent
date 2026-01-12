@@ -69,8 +69,8 @@ async def generate_narrations(
             }
         )
 
-        return {
-            "success": True,
-            "narrations": generated_narrations,
-            "total_narrations": len(generated_narrations),
-        }
+    return {
+        "success": True,
+        "narrations": generated_narrations,
+        "total_narrations": len(generated_narrations),
+    }

@@ -29,13 +29,15 @@ class ContentPlanOutput(BaseModel):
 
 
 # MODEL = LiteLlm(model="openai/gpt-4o")
+# MODEL = LiteLlm(model="openai/gpt-5.2") 
 
 content_planner_agent = Agent(
     name="ContentPlannerAgent",
     description=CONTENT_PLANNER_DESCRIPTION,
     instruction=CONTENT_PLANNER_PROMPT,
     # model=MODEL,
-    model='gemini-2.5-flash',
+    # model="gemini-3-pro-preview",
+    model="gemini-2.5-flash", 
     output_schema=ContentPlanOutput,
     output_key="content_planner_output",
 )

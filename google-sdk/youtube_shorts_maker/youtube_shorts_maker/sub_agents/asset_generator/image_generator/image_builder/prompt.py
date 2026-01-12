@@ -22,4 +22,9 @@ The tool will access optimized prompts containing:
 
 ## Output:
 Return structured information about the generated images including file paths, scene IDs, and generation status.
+
+## CRITICAL INSTRUCTION:
+You MUST NOT output the final result until `generate_images` has successfully processed ALL scenes.
+If the tool returns fewer images than scenes, you must investigate or retry.
+Do not yield control back to the parent agent until all visual assets are secured.
 """
