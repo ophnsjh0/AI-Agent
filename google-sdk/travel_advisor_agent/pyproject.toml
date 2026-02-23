@@ -1,0 +1,20 @@
+[project]
+name = "travel_advisor_agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic==2.11.5",
+    "pydantic-settings==2.9.1",
+    "pydantic_core==2.33.2",
+    "google-adk==1.15.1",
+    "google-genai>=1.31.0",
+    "litellm>=1.76.0",
+    "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+]

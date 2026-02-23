@@ -1,5 +1,5 @@
 def main():
-    print("Hello from email-refiner-agent!")
+    print("Hello from hello-langgraph!")
 
 
 if __name__ == "__main__":

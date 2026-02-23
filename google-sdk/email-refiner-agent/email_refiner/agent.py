@@ -1,6 +1,6 @@
 from google.adk.agents import Agent, LoopAgent
 from google.adk.models.lite_llm import LiteLlm
-from .prompt import (
+from .prompt_kr import (
     EMAIL_OPTIMIZER_DESCRIPTION,
     TONE_STYLIST_DESCRIPTION,
     CLARITY_EDITOR_DESCRIPTION,
@@ -13,7 +13,7 @@ from .prompt import (
     EMAIL_SYNTHESIZER_INSTRUCTION,
     PERSUASION_STRATEGIST_INSTRUCTION,
 )
-from google.adk.tools import ToolContext
+from google.adk.tools.tool_context import ToolContext
 
 MODEL = LiteLlm(model="openai/gpt-4o")
 
@@ -37,7 +37,7 @@ persuation_agent = Agent(
     name="PersuationAgent",
     description=PERSUASION_STRATEGIST_DESCRIPTION,
     instruction=PERSUASION_STRATEGIST_INSTRUCTION,
-    output_key="persuation_output",
+    output_key="persuasion_output",
     model=MODEL,
 )
 
@@ -49,10 +49,12 @@ email_synthesizer_agent = Agent(
     model=MODEL,
 )
 
+
 async def escalate_email_complete(tool_context: ToolContext):
     """Use this tool only when the email is good to go."""
     tool_context.actions.escalate = True
     return "Email optimization complete."
+
 
 literary_critic_agent = Agent(
     name="LiteraryCriticAgent",
@@ -60,14 +62,15 @@ literary_critic_agent = Agent(
     instruction=LITERARY_CRITIC_INSTRUCTION,
     tools=[
         escalate_email_complete,
-    ]
+    ],
+    model=MODEL,
 )
 
 email_refiner_agent = LoopAgent(
     name="EmailRefinerAgent",
     max_iterations=50,
     description=EMAIL_OPTIMIZER_DESCRIPTION,
-    agents=[
+    sub_agents=[
         clarity_agent,
         tone_stylist_agent,
         persuation_agent,
