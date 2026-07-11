@@ -1,0 +1,1502 @@
+{
+  "generated_at": "2026-05-13T16:14:10.245852",
+  "host": "192.168.74.136",
+  "total": 200,
+  "summary": {
+    "ERROR": 6,
+    "INFO": 194
+  },
+  "danger_count": 12,
+  "danger": [
+    {
+      "timestamp": "May 12 2026 16:14:00",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.113 spt=65442 dpt=443 act=dropped dhost=play.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs6=VALID cs6Label=Certificate Validity status cs7=Client SSL, Internal error cs7Label=Error type cs8=shutdown while in init cs8Label=Reason for internal error cn1=443 cn1Label=VIP port cn2=22 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:14:00",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (play.google.com) (ip Src port: 65443 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.113) reason: None - bypass",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (ogads-pa.clients6.google.com) (ip Src port: 65415 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.95) reason: Connection finish by peer - rejected",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.95 spt=65415 dpt=443 act=dropped dhost=ogads-pa.clients6.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=19 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (ogads-pa.clients6.google.com) (ip Src port: 65416 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.95) reason: Connection finish by peer - rejected",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.95 spt=65416 dpt=443 act=dropped dhost=ogads-pa.clients6.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=20 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (update.googleapis.com) (ip Src port: 65418 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.23.138) reason: Connection finish by peer - rejected",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.23.138 spt=65418 dpt=443 act=dropped dhost=update.googleapis.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=18 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (play.google.com) (ip Src port: 65417 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.139) reason: Connection finish by peer - rejected",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:43",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.139 spt=65417 dpt=443 act=dropped dhost=play.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-CHACHA20-POLY1305 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=17 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:42",
+      "level": "ERROR",
+      "facility": "SSL",
+      "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.101 spt=65420 dpt=443 act=dropped dhost=android.clients.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs6=VALID cs6Label=Certificate Validity status cs7=Client SSL, Internal error cs7Label=Error type cs8=shutdown while in init cs8Label=Reason for internal error cn1=443 cn1Label=VIP port cn2=16 cn2Label=Log ID",
+      "source": "rest"
+    },
+    {
+      "timestamp": "May 12 2026 16:12:41",
+      "level": "INFO",
+      "facility": "SYSTEM",
+      "message": "SSL intercept failed, server (android.clients.google.com) (ip Src port: 65421 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.101) reason: None - bypass",
+      "source": "rest"
+    }
+  ],
+  "by_level": {
+    "INFO": [
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440834|SSL Inspection Bypassed|2|src=10.10.191.100 dst=23.46.228.178 spt=65455 dpt=443 act=bypassed dhost=aadcdn.msftauth.net cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.3 cs3Label=SSL version cs6=UNKNOWN cs6Label=Certificate Validity status cn1=443 cn1Label=VIP port cn2=27 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:53",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=0.0.0.0 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=0.0.0.0 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=0.0.0.0 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=0.0.0.0 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=10.10.128.215 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:20",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:17",
+        "level": "INFO",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440834|SSL Inspection Bypassed|2|src=10.10.191.100 dst=13.107.246.74 spt=65451 dpt=443 act=bypassed dhost=aadcdn.msauth.net cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.3 cs3Label=SSL version cs6=UNKNOWN cs6Label=Certificate Validity status cn1=443 cn1Label=VIP port cn2=25 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:17",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:06",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:06",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:05",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: play.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:05",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=play.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: play.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=play.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: ogads-pa.clients6.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=ogads-pa.clients6.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:03",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: translate.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=translate.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:01",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (play.google.com) (ip Src port: 65443 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.113) reason: None - bypass",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440834|SSL Inspection Bypassed|2|src=10.10.191.100 dst=142.250.21.113 spt=65443 dpt=443 act=bypassed dhost=play.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.3 cs3Label=SSL version cs6=UNKNOWN cs6Label=Certificate Validity status cn1=443 cn1Label=VIP port cn2=23 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.youtube.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.youtube.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:59",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: content-autofill.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=content-autofill.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:58",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: fonts.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=fonts.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.gstatic.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.gstatic.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:57",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: accounts.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=accounts.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:56",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: mail.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=mail.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:54",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: gmail.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:54",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=gmail.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:54",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:54",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:52",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:52",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:49",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:49",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=10.10.191.100 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=10.10.191.100 clientside_src=20.190.144.137",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoftonline.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoftonline.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440834|SSL Inspection Bypassed|2|src=10.10.191.100 dst=13.107.6.156 spt=65431 dpt=443 act=bypassed dhost=www.office.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.3 cs3Label=SSL version cs6=UNKNOWN cs6Label=Certificate Validity status cn1=443 cn1Label=VIP port cn2=21 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-Context=ae558d58-51c1-429d-9ae3-dd3d8d51e704 serverside_src=10.10.191.100 clientside_src=40.126.16.166",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Restrict-Access-To-Tenants=uber.onmicrosoft.com,ubersys.onmicrosoft.com serverside_src=10.10.191.100 clientside_src=40.126.16.166",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Entra login host: login.microsoft.com",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=login.microsoft.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "ACOS",
+        "message": "Proxy [response-code 302] client 10.10.191.100:65429, server 40.126.16.166:80, in-bytes=508",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:46",
+        "level": "INFO",
+        "facility": "ACOS",
+        "message": "Proxy GET[internet- (All-Source-Domain-Opt priority#7)]:login.microsoft.com url / client 10.10.191.100:65429, snat 10.10.128.215:2049 server 40.126.16.166:80 out-bytes:460",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:44",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "Running configuration successfully saved to primary-Config in Partition shared by user admin using Session ID 53 .",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:43",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:43",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:40",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:40",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:37",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "NTP server time.google.com is in polling state",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:37",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: update.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:37",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=update.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:37",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:37",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: update.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=update.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: clientservices.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=clientservices.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:36",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: optimizationguide-pa.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:13:04",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=optimizationguide-pa.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: www.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=www.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:55",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: optimizationguide-pa.googleapis.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=optimizationguide-pa.googleapis.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:46",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (ogads-pa.clients6.google.com) (ip Src port: 65415 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.95) reason: Connection finish by peer - rejected",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (ogads-pa.clients6.google.com) (ip Src port: 65416 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.95) reason: Connection finish by peer - rejected",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (update.googleapis.com) (ip Src port: 65418 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.23.138) reason: Connection finish by peer - rejected",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (play.google.com) (ip Src port: 65417 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.139) reason: Connection finish by peer - rejected",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:Matched Search/Media Host: play.google.com - Applying Server-SSL only",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:HTTP_REQUEST Host=play.google.com is_ssl=1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENTSSL_HANDSHAKE - ssl set to 1",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "INFO",
+        "facility": "AFLEX",
+        "message": "O365-New:CLIENT_ACCEPTED - ssl set to 0",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:41",
+        "level": "INFO",
+        "facility": "SYSTEM",
+        "message": "SSL intercept failed, server (android.clients.google.com) (ip Src port: 65421 Src IP: 10.10.191.100  Dst port: 443 Dst IP: 142.250.21.101) reason: None - bypass",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:41",
+        "level": "INFO",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440834|SSL Inspection Bypassed|2|src=10.10.191.100 dst=142.250.21.101 spt=65421 dpt=443 act=bypassed dhost=android.clients.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.3 cs3Label=SSL version cs6=UNKNOWN cs6Label=Certificate Validity status cn1=443 cn1Label=VIP port cn2=15 cn2Label=Log ID",
+        "source": "rest"
+      }
+    ],
+    "ERROR": [
+      {
+        "timestamp": "May 12 2026 16:14:00",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.113 spt=65442 dpt=443 act=dropped dhost=play.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs6=VALID cs6Label=Certificate Validity status cs7=Client SSL, Internal error cs7Label=Error type cs8=shutdown while in init cs8Label=Reason for internal error cn1=443 cn1Label=VIP port cn2=22 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.95 spt=65415 dpt=443 act=dropped dhost=ogads-pa.clients6.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=19 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.95 spt=65416 dpt=443 act=dropped dhost=ogads-pa.clients6.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=20 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.23.138 spt=65418 dpt=443 act=dropped dhost=update.googleapis.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-AES256-GCM-SHA384 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=18 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:43",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.139 spt=65417 dpt=443 act=dropped dhost=play.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs3=TLSv1.2 cs3Label=SSL version cs4=ECDHE-ECDSA-CHACHA20-POLY1305 cs4Label=Cipher suite cs6=VALID cs6Label=Certificate Validity status cs7=CERT Fetch, connection finish by peer cs7Label=Error type cn1=443 cn1Label=VIP port cn2=17 cn2Label=Log ID",
+        "source": "rest"
+      },
+      {
+        "timestamp": "May 12 2026 16:12:42",
+        "level": "ERROR",
+        "facility": "SSL",
+        "message": "A10-CAP-1  CEF:0|A10|CFW|5.2.1-P13|SSLi 486706518616440835|SSL Inspection Failed|5|src=10.10.191.100 dst=142.250.21.101 spt=65420 dpt=443 act=dropped dhost=android.clients.google.com cs1=VS-O365 cs1Label=VIP name cs2=https cs2Label=VIP protocol cs6=VALID cs6Label=Certificate Validity status cs7=Client SSL, Internal error cs7Label=Error type cs8=shutdown while in init cs8Label=Reason for internal error cn1=443 cn1Label=VIP port cn2=16 cn2Label=Log ID",
+        "source": "rest"
+      }
+    ]
+  }
+}

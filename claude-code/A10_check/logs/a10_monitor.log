@@ -1,0 +1,130 @@
+2026-05-13 15:48:45 [INFO] src.main - DB 초기화 완료: /Users/junghun/code/AI_Agent/claude-code/data/a10_monitor.db
+2026-05-13 15:48:45 [INFO] src.main - 점검 스케줄 등록 완료 — 매일 08:00 실행
+2026-05-13 15:50:42 [INFO] __main__ - A10 ADC 점검 자동화 시작
+2026-05-13 15:50:42 [INFO] __main__ - DB 초기화 완료: /Users/junghun/code/AI_Agent/claude-code/data/a10_monitor.db
+2026-05-13 15:50:42 [INFO] __main__ - 점검 스케줄 등록 완료 — 매일 08:00 실행
+2026-05-13 15:50:42 [INFO] __main__ - 초기 점검을 즉시 실행합니다.
+2026-05-13 15:50:42 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-13 15:50:42 [INFO] src.modules.a10_client - REST 로그인 성공 (host=192.168.74.136)
+2026-05-13 15:50:42 [INFO] __main__ - system_info 수집 완료
+2026-05-13 15:50:52 [WARNING] src.modules.a10_client - CPU 사용률 REST 실패, CLI로 재시도: REST 요청 최종 실패 [GET /system/cpu/oper]: 404 Client Error: Not Found for url: https://192.168.74.136:443/axapi/v3/system/cpu/oper
+2026-05-13 15:50:58 [ERROR] src.modules.a10_client - CPU 사용률 CLI도 실패: CLI 명령 오류: Warning: Permanently added '192.168.74.136' (ECDSA) to the list of known hosts.
+Received disconnect from 192.168.74.136 port 22:2: Too many authentication failures
+Disconnected from 192.168.74.136 port 22
+2026-05-13 15:50:58 [ERROR] __main__ - cpu_usage 수집 실패: CPU 사용률 조회 실패 (REST·CLI 모두 불가)
+2026-05-13 15:50:58 [INFO] __main__ - memory_usage 수집 완료
+2026-05-13 15:50:58 [INFO] __main__ - interface_stats 수집 완료
+2026-05-13 15:50:58 [INFO] __main__ - slb_servers 수집 완료
+2026-05-13 15:51:09 [WARNING] src.modules.a10_client - 시스템 로그 REST 실패, CLI로 재시도: REST 요청 최종 실패 [GET /syslog?count=200]: 400 Client Error: Bad Request for url: https://192.168.74.136:443/axapi/v3/syslog?count=200
+2026-05-13 15:51:14 [ERROR] src.modules.a10_client - 시스템 로그 CLI도 실패: CLI 명령 오류: Warning: Permanently added '192.168.74.136' (ECDSA) to the list of known hosts.
+Received disconnect from 192.168.74.136 port 22:2: Too many authentication failures
+Disconnected from 192.168.74.136 port 22
+2026-05-13 15:51:14 [ERROR] __main__ - 로그 수집/분석 실패: 시스템 로그 조회 실패 (REST·CLI 모두 불가)
+2026-05-13 15:51:14 [INFO] src.modules.a10_client - REST 로그아웃 완료
+2026-05-13 15:51:14 [INFO] __main__ - 점검 결과 DB 저장 완료
+2026-05-13 15:51:14 [INFO] __main__ - ===== 점검 완료 [상태: partial] =====
+2026-05-13 15:51:14 [INFO] __main__ - 스케줄 대기 중 (Ctrl+C로 종료)
+2026-05-13 16:14:08 [INFO] src.main - DB 초기화 완료: /Users/junghun/code/AI_Agent/claude-code/A10_check/data/a10_monitor.db
+2026-05-13 16:14:08 [INFO] src.main - ===== 점검 시작 [192.168.74.136] =====
+2026-05-13 16:14:08 [INFO] src.modules.a10_client - REST 로그인 성공 (host=192.168.74.136)
+2026-05-13 16:14:08 [INFO] src.main - system_info 수집 완료
+2026-05-13 16:14:08 [WARNING] src.modules.a10_client - CPU 사용률 REST 실패, CLI로 재시도: CPU 데이터 없음 (vThunder REST 미지원)
+2026-05-13 16:14:09 [ERROR] src.modules.a10_client - CPU 사용률 CLI도 실패: CLI 명령 오류: Warning: Permanently added '192.168.74.136' (ECDSA) to the list of known hosts.
+Permission denied, please try again.
+Permission denied, please try again.
+Received disconnect from 192.168.74.136 port 22:2: Too many authentication failures
+Disconnected from 192.168.74.136 port 22
+2026-05-13 16:14:09 [ERROR] src.main - cpu_usage 수집 실패: CPU 사용률 조회 실패 (REST·CLI 모두 불가)
+2026-05-13 16:14:09 [INFO] src.main - memory_usage 수집 완료
+2026-05-13 16:14:09 [INFO] src.main - interface_stats 수집 완료
+2026-05-13 16:14:09 [INFO] src.main - slb_servers 수집 완료
+2026-05-13 16:14:10 [INFO] src.modules.report - 로그 리포트 저장 완료: /Users/junghun/code/AI_Agent/claude-code/A10_check/reports/log_report_192.168.74.136_20260513_161410.json
+2026-05-13 16:14:10 [INFO] src.main - 로그 리포트 저장: /Users/junghun/code/AI_Agent/claude-code/A10_check/reports/log_report_192.168.74.136_20260513_161410.json
+2026-05-13 16:14:10 [INFO] src.modules.a10_client - REST 로그아웃 완료
+2026-05-13 16:14:10 [INFO] src.main - 점검 결과 DB 저장 완료
+2026-05-13 16:14:10 [INFO] src.main - ===== 점검 완료 [상태: partial] =====
+2026-05-13 16:16:54 [INFO] src.main - DB 초기화 완료: /Users/junghun/code/AI_Agent/claude-code/A10_check/data/a10_monitor.db
+2026-05-13 16:16:54 [INFO] src.main - ===== 점검 시작 [192.168.74.136] =====
+2026-05-13 16:16:54 [INFO] src.modules.a10_client - REST 로그인 성공 (host=192.168.74.136)
+2026-05-13 16:16:54 [INFO] src.main - system_info 수집 완료
+2026-05-13 16:16:54 [WARNING] src.modules.a10_client - CPU 사용률 REST 실패, CLI로 재시도: CPU 데이터 없음 (vThunder REST 미지원)
+2026-05-13 16:16:55 [ERROR] src.modules.a10_client - CPU 사용률 CLI도 실패: CLI 명령 오류: Warning: Permanently added '192.168.74.136' (ECDSA) to the list of known hosts.
+Permission denied, please try again.
+Permission denied, please try again.
+Received disconnect from 192.168.74.136 port 22:2: Too many authentication failures
+Disconnected from 192.168.74.136 port 22
+2026-05-13 16:16:55 [ERROR] src.main - cpu_usage 수집 실패: CPU 사용률 조회 실패 (REST·CLI 모두 불가)
+2026-05-13 16:16:55 [INFO] src.main - memory_usage 수집 완료
+2026-05-13 16:16:55 [INFO] src.main - interface_stats 수집 완료
+2026-05-13 16:16:55 [INFO] src.main - slb_servers 수집 완료
+2026-05-13 16:16:55 [INFO] src.modules.report - 로그 리포트 저장 완료: /Users/junghun/code/AI_Agent/claude-code/A10_check/reports/log_report_192.168.74.136_20260513_161655.json
+2026-05-13 16:16:55 [INFO] src.main - 로그 리포트 저장: /Users/junghun/code/AI_Agent/claude-code/A10_check/reports/log_report_192.168.74.136_20260513_161655.json
+2026-05-13 16:16:55 [INFO] src.modules.a10_client - REST 로그아웃 완료
+2026-05-13 16:16:55 [INFO] src.main - 점검 결과 DB 저장 완료
+2026-05-13 16:16:55 [INFO] src.main - ===== 점검 완료 [상태: partial] =====
+2026-05-14 08:07:07 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-14 09:11:27 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x107023710>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-14 09:27:01 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Operation timed out
+2026-05-14 09:27:01 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-14 09:27:01 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-15 08:00:15 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-15 08:00:25 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by NewConnectionError("HTTPSConnection(host='192.168.74.136', port=443): Failed to establish a new connection: [Errno 51] Network is unreachable"))
+2026-05-15 08:00:25 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Network is unreachable
+2026-05-15 08:00:25 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-15 08:00:25 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-16 08:26:48 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-16 09:27:48 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x107054c50>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-16 09:43:07 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Operation timed out
+2026-05-16 09:43:07 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-16 09:43:07 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-17 08:14:59 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-17 10:03:42 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x10703b850>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-17 10:19:30 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Operation timed out
+2026-05-17 10:19:30 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-17 10:19:30 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-18 09:07:59 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-18 09:08:20 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x107022790>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-18 09:08:46 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 타임아웃: show version
+2026-05-18 09:08:46 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-18 09:08:46 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-19 08:03:06 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-19 08:03:46 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x107048690>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-19 08:03:56 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 타임아웃: show version
+2026-05-19 08:03:56 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-19 08:03:56 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-20 08:05:13 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-20 08:33:32 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by NewConnectionError("HTTPSConnection(host='192.168.74.136', port=443): Failed to establish a new connection: [Errno 51] Network is unreachable"))
+2026-05-20 08:33:32 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Network is unreachable
+2026-05-20 08:33:32 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-20 08:33:32 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-21 08:20:59 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-21 08:32:31 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by NewConnectionError("HTTPSConnection(host='192.168.74.136', port=443): Failed to establish a new connection: [Errno 51] Network is unreachable"))
+2026-05-21 08:32:31 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Network is unreachable
+2026-05-21 08:32:31 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-21 08:32:31 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-22 08:59:08 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-22 09:13:12 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by NewConnectionError("HTTPSConnection(host='192.168.74.136', port=443): Failed to establish a new connection: [Errno 51] Network is unreachable"))
+2026-05-22 09:13:12 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Network is unreachable
+2026-05-22 09:13:12 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-22 09:13:12 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-23 08:27:36 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-23 09:37:55 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x10703ac50>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-23 09:53:41 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Operation timed out
+2026-05-23 09:53:41 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-23 09:53:41 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-24 08:24:30 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-24 09:41:41 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x1070480d0>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-24 10:15:38 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 타임아웃: show version
+2026-05-24 10:15:38 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-24 10:15:38 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-25 08:26:15 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-25 09:17:10 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by ConnectTimeoutError(<HTTPSConnection(host='192.168.74.136', port=443) at 0x107023bd0>, 'Connection to 192.168.74.136 timed out. (connect timeout=10)'))
+2026-05-25 09:17:20 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 타임아웃: show version
+2026-05-25 09:17:20 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-25 09:17:20 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-26 08:15:21 [INFO] __main__ - ===== 점검 시작 [192.168.74.136] =====
+2026-05-26 08:30:45 [WARNING] src.modules.a10_client - REST 로그인 실패, CLI로 연결 확인: REST 요청 최종 실패 [POST /auth]: HTTPSConnectionPool(host='192.168.74.136', port=443): Max retries exceeded with url: /axapi/v3/auth (Caused by NewConnectionError("HTTPSConnection(host='192.168.74.136', port=443): Failed to establish a new connection: [Errno 51] Network is unreachable"))
+2026-05-26 08:30:45 [ERROR] src.modules.a10_client - CLI 연결 실패: CLI 명령 오류: ssh: connect to host 192.168.74.136 port 22: Network is unreachable
+2026-05-26 08:30:45 [ERROR] __main__ - ADC 로그인 실패 — 점검 중단
+2026-05-26 08:30:45 [ERROR] __main__ - DB 저장 실패: unable to open database file
+2026-05-26 08:51:36 [INFO] __main__ - 종료 신호 수신 (SIGTERM) — 프로그램을 종료합니다.
